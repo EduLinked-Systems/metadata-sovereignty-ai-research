@@ -52,3 +52,4 @@ Students should prioritise the top items for Week 1–2 work (accessibility, met
 ## Restricted / private items (do not copy to public repo)
 
 Some documents in the SSA archive are restricted (contain operational or evidentiary detail). Students must request supervised access using an `access-request` Issue if they have a justified need.
+https://orcid.org/0009-0007-8026-9550
