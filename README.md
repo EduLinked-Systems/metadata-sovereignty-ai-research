@@ -1,4 +1,14 @@
 # Metadata Sovereignty AI Research Repository
+## Start Here
+
+If you are a student contributor to this project:
+
+1. Read **STUDENT_RESEARCH_GUIDE.md**
+2. Review **RESEARCH_QUESTIONS.md**
+3. Use **METADATA_TEMPLATE.md** when documenting records
+4. Use **AI_FEATURE_EVALUATION_TEMPLATE.md** when analysing AI tools
+
+All research should be added to the appropriate folders in the repository.
 
 This repository supports a student consulting project for the **Metadata Sovereignty Alliance (EduLinked Pty Ltd)** exploring ethical AI, authorship tracking, and accessibility-focused metadata systems.
 
