@@ -59,3 +59,4 @@ All contributions should clearly record:
 - change history
 
 This repository models the **metadata sovereignty principles** being researched.
+When documenting records or case examples, use METADATA_TEMPLATE.md to capture authorship and governance information.
