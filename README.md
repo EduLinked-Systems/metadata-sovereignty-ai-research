@@ -79,3 +79,12 @@ Students should begin by reading:
 These documents explain how research should be structured and documented.
 Supervision guidance and project checkpoints are documented in SUPERVISOR_NOTES.md.
 For definitions of key terms used in this project, see GLOSSARY.md.
+## Research Governance
+
+Key documentation standards used in this repository:
+
+• GLOSSARY.md  
+• METADATA_TEMPLATE.md  
+• AI_FEATURE_EVALUATION_TEMPLATE.md  
+• CITATION.md  
+• SUPERVISOR_NOTES.md
