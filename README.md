@@ -78,3 +78,4 @@ Students should begin by reading:
 
 These documents explain how research should be structured and documented.
 Supervision guidance and project checkpoints are documented in SUPERVISOR_NOTES.md.
+For definitions of key terms used in this project, see GLOSSARY.md.
