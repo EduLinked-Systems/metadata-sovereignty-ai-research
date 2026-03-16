@@ -1,5 +1,5 @@
 # Relevant Publications — Sarah Ailish McLoughlin (curated)
-
+https://orcid.org/0009-0007-8026-9550
 These items are the most relevant EduLinked / SSA™ works for the Metadata Sovereignty AI project.
 Students should prioritise the top items for Week 1–2 work (accessibility, metadata, ethics).
 
