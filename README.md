@@ -116,3 +116,6 @@ Conceptual system architecture
 final-report
 Draft and final report materials
 www.edulinked.com.au
+Accessibility research resources are located in:
+
+02_background_research/accessibility/
