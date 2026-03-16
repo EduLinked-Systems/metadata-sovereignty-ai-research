@@ -37,7 +37,7 @@ Key themes include:
 This project investigates **how AI can support these goals while maintaining strong ethical safeguards**.
 
 ---
-# System Architecture Overview
+## System Architecture Overview
 
 The project explores a **metadata-first architecture** where records are governed by authorship, consent, and provenance before any AI tools are applied.
 
@@ -65,6 +65,7 @@ J --> K
 K --> L[Accessible Output]
 
 L --> M[Community Use]
+
 
 # System Overview
 
