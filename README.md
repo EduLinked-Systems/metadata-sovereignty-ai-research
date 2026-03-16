@@ -6,7 +6,8 @@ This repository is used by a student consulting team to investigate how artifici
 
 Organisation: EduLinked Pty Ltd  
 Location: Brisbane, Australia  
-Contact: founder@edulinked.com.au
+Contact: founder@edulinked.com.au  
+Website: https://www.edulinked.com.au
 
 ---
 
@@ -37,7 +38,8 @@ Key themes include:
 This project investigates **how AI can support these goals while maintaining strong ethical safeguards**.
 
 ---
-## System Architecture Overview
+
+# System Architecture Overview
 
 The project explores a **metadata-first architecture** where records are governed by authorship, consent, and provenance before any AI tools are applied.
 
@@ -65,17 +67,8 @@ J --> K
 K --> L[Accessible Output]
 
 L --> M[Community Use]
-
-
-# System Overview
-
-See the conceptual architecture:
-
-`/07_diagrams/system_architecture.md`
-
-The architecture demonstrates how metadata governance, record repositories, and accessibility-focused AI tools interact.
-
----
+See /07_diagrams/system_architecture.md for a detailed explanation of the architecture.
+Repository Structure
 01_project_brief
 Project assignment context and background
 
@@ -99,74 +92,27 @@ Conceptual system architecture
 
 final-report
 Draft and final report materials
+01_project_brief
+Project assignment context and background
 
----
+02_background_research
+Literature review and sector analysis
 
-# Research Documentation Standards
+03_metadata-standards
+Authorship tracking and provenance standards
 
-The project uses structured documentation to support traceability and transparency.
+04_accessibility-ai-features
+Accessibility-focused AI research
 
-Key documentation resources:
+05_ethics-framework
+Responsible AI governance analysis
 
-• METADATA_TEMPLATE.md  
-• AI_FEATURE_EVALUATION_TEMPLATE.md  
-• CITATION.md  
-• GLOSSARY.md
+06_strategy-recommendations
+AI strategy and roadmap proposals
 
-These templates ensure research contributions remain clear, verifiable, and ethically documented.
+07_diagrams
+Conceptual system architecture
 
----
-
-# Ethical Principles
-
-The project prioritises responsible AI development.
-
-Research and recommendations should support:
-
-• preservation of authorship  
-• accessibility for diverse users  
-• transparent AI outputs  
-• ethical data governance
-
-The project avoids recommending systems involving:
-
-• facial recognition  
-• biometric profiling  
-• automated legal or clinical decisions  
-• predictive risk scoring about individuals
-
----
-
-# Project Supervision
-
-Guidance and project checkpoints are documented in:
-
-SUPERVISOR_NOTES.md
-
-Students should refer to this document throughout the project.
-
----
-
-# Citation
-
-Citation guidance for sources and repository use is documented in:
-
-CITATION.md
-
----
-
-# Licence
-
-Creative Commons Attribution 4.0 (CC BY 4.0)
-
-This allows reuse and adaptation of the research with appropriate attribution.
-
----
-
-# About EduLinked
-
-EduLinked develops inclusive learning systems, advocacy tools, and accessibility-focused technologies that support ethical knowledge sharing and community participation.
-
-https://www.edulinked.com.au
-
-# Repository Structure
+final-report
+Draft and final report materials
+www.edulinked.com.au
