@@ -1,121 +1,86 @@
 # Metadata Sovereignty AI Research Repository
-For a map of the repository structure see NAVIGATION.md.
+
 Research repository supporting the **Metadata Sovereignty Alliance (EduLinked Pty Ltd)** project exploring ethical AI, authorship tracking, and accessibility-first metadata systems.
 
-This repository is used by a student consulting team to investigate how artificial intelligence can responsibly support systems that preserve **authorship, consent, and accessible communication**.
+This repository is used by a student consulting team to investigate how artificial intelligence can responsibly support systems that preserve **authorship, consent, provenance, and accessible communication**.
 
 Organisation: EduLinked Pty Ltd  
 Location: Brisbane, Australia  
 Contact: founder@edulinked.com.au  
 Website: https://www.edulinked.com.au
 
----
+## Start Here
 
-# Start Here
+New contributors should begin with these canonical orientation files:
 
-Students contributing to this project should begin by reading:
+- [NAVIGATION.md](NAVIGATION.md) - repository map and folder-level guide
+- [STUDENT_RESEARCH_GUIDE.md](STUDENT_RESEARCH_GUIDE.md) - project context, research expectations, and contribution guidance
+- [RESEARCH_QUESTIONS.md](RESEARCH_QUESTIONS.md) - research areas, outputs, and target folders
+- [GLOSSARY.md](GLOSSARY.md) - shared terminology for metadata sovereignty, AI transparency, accessibility, and governance
+- [METADATA_TEMPLATE.md](METADATA_TEMPLATE.md) - standard record documentation structure for authorship, provenance, consent, and AI processing permissions
 
-• STUDENT_RESEARCH_GUIDE.md  
-• RESEARCH_QUESTIONS.md  
-• GLOSSARY.md  
+Use these files as the source of truth before adding or revising research content.
 
-These documents explain the project goals, terminology, and research tasks.
-
----
-
-# Project Overview
+## Project Overview
 
 The Metadata Sovereignty Alliance explores how metadata-first infrastructure can protect authorship and ethical record governance in AI-supported systems.
 
 Key themes include:
 
-• authorship preservation  
-• accessible information formats (Easy-Read, AAC)  
-• transparent AI use  
-• ethical data governance  
-• long-term systems memory
+- authorship preservation
+- accessible information formats, including Easy-Read and AAC
+- transparent AI use
+- ethical data governance
+- consent and provenance tracking
+- long-term systems memory
 
-This project investigates **how AI can support these goals while maintaining strong ethical safeguards**.
+The project investigates **how AI can support these goals while maintaining strong ethical safeguards**. The intended pattern is human-led, metadata-first, and accessibility-aware.
 
----
+## System Architecture Overview
 
-# System Architecture Overview
-
-The project explores a **metadata-first architecture** where records are governed by authorship, consent, and provenance before any AI tools are applied.
+The project explores a metadata-first architecture where records are governed by authorship, consent, and provenance before any AI tools are applied.
 
 ```mermaid
 flowchart TD
+    A[User Creates Record] --> B[Metadata Capture]
+    B --> C[Record Repository]
+    C --> D[Version History]
+    C --> E[Consent Management]
+    C --> F[Authorship Tracking]
+    C --> G[AI Processing Layer]
+    G --> H[Plain Language Summary]
+    G --> I[Easy-Read Conversion]
+    G --> J[Caption Generation]
+    H --> K[Human Review]
+    I --> K
+    J --> K
+    K --> L[Accessible Output]
+    L --> M[Community Use]
+```
 
-A[User Creates Record] --> B[Metadata Capture]
+See [07_diagrams/system_architecture.md](07_diagrams/system_architecture.md) for a detailed explanation of the architecture.
 
-B --> C[Record Repository]
+## Repository Structure
 
-C --> D[Version History]
-C --> E[Consent Management]
-C --> F[Authorship Tracking]
+| Path | Purpose |
+| --- | --- |
+| `01_project_brief/` | Project assignment context and background |
+| `02_background_research/` | Literature review, sector analysis, and accessibility resources |
+| `03_metadata-standards/` | Authorship tracking, provenance standards, and minimum metadata requirements |
+| `04_accessibility-ai-features/` | Accessibility-focused AI research and transparency requirements |
+| `05_ethics-framework/` | Responsible AI governance analysis, checklists, and evaluation metrics |
+| `06_strategy-recommendations/` | AI strategy drafts, roadmap proposals, and implementation recommendations |
+| `07_diagrams/` | Conceptual system architecture diagrams |
+| `final-report/` | Draft and final report materials |
 
-C --> G[AI Processing Layer]
+## Documentation Standards
 
-G --> H[Plain Language Summary]
-G --> I[Easy Read Conversion]
-G --> J[Caption Generation]
+When adding research outputs, contributors should:
 
-H --> K[Human Review]
-I --> K
-J --> K
+- use the shared terms in [GLOSSARY.md](GLOSSARY.md) consistently
+- document authorship, creation date, sources, and major revisions
+- apply [METADATA_TEMPLATE.md](METADATA_TEMPLATE.md) when analysing records, examples, or case studies
+- cite credible sources rather than relying only on promotional material
+- make accessibility, consent, human review, and AI transparency visible in recommendations
 
-K --> L[Accessible Output]
-
-L --> M[Community Use]
-See /07_diagrams/system_architecture.md for a detailed explanation of the architecture.
-Repository Structure
-01_project_brief
-Project assignment context and background
-
-02_background_research
-Literature review and sector analysis
-
-03_metadata-standards
-Authorship tracking and provenance standards
-
-04_accessibility-ai-features
-Accessibility-focused AI research
-
-05_ethics-framework
-Responsible AI governance analysis
-
-06_strategy-recommendations
-AI strategy and roadmap proposals
-
-07_diagrams
-Conceptual system architecture
-
-final-report
-Draft and final report materials
-01_project_brief
-Project assignment context and background
-
-02_background_research
-Literature review and sector analysis
-
-03_metadata-standards
-Authorship tracking and provenance standards
-
-04_accessibility-ai-features
-Accessibility-focused AI research
-
-05_ethics-framework
-Responsible AI governance analysis
-
-06_strategy-recommendations
-AI strategy and roadmap proposals
-
-07_diagrams
-Conceptual system architecture
-
-final-report
-Draft and final report materials
-www.edulinked.com.au
-Accessibility research resources are located in:
-
-02_background_research/accessibility/
+Accessibility research resources are located in [`02_background_research/accessibility/`](02_background_research/accessibility/).
