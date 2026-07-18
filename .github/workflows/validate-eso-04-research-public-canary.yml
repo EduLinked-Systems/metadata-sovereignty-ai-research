@@ -1,0 +1,95 @@
+name: Validate ESO-04 Research Public Canary
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/validate-eso-04-research-public-canary.yml"
+      - "qa/eso-04/research-public.service-input.json"
+      - "README.md"
+      - "NAVIGATION.md"
+      - "RESEARCH_QUESTIONS.md"
+      - "METADATA_TEMPLATE.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-research-controls:
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.result.outputs.result }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate retained research and publication controls
+        run: |
+          set -euo pipefail
+          test -s README.md
+          test -s NAVIGATION.md
+          test -s RESEARCH_QUESTIONS.md
+          test -s METADATA_TEMPLATE.md
+          grep -qi "authorship" README.md
+          grep -qi "consent" README.md
+          grep -qi "provenance" README.md
+          grep -qi "human review" README.md
+      - id: result
+        run: echo "result=success" >> "$GITHUB_OUTPUT"
+
+  central-compatibility:
+    uses: EduLinked-Systems/.github/.github/workflows/reusable-orchestration-compatibility.yml@de1b94c52d36f3d7c6bf91ce7ddbd202c5a813ea
+    with:
+      service_input_path: qa/eso-04/research-public.service-input.json
+
+  compare-evidence:
+    if: always()
+    needs:
+      - local-research-controls
+      - central-compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - name: Produce local-versus-central comparison receipt
+        env:
+          LOCAL_RESULT: ${{ needs.local-research-controls.outputs.result }}
+          CENTRAL_RESULT: ${{ needs.central-compatibility.outputs.overall_status }}
+          CENTRAL_SUCCESS_CLAIM: ${{ needs.central-compatibility.outputs.success_claim_allowed }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+
+          local_result = os.environ.get("LOCAL_RESULT") or "unresolved"
+          central_result = os.environ.get("CENTRAL_RESULT") or "unresolved"
+          central_success = os.environ.get("CENTRAL_SUCCESS_CLAIM", "false").lower() == "true"
+          compatible = local_result == "success" and central_result == "compatible" and central_success
+          receipt = {
+              "receipt_id": f"ESO-04-RESEARCH-PUBLIC-{os.environ['GITHUB_RUN_ID']}",
+              "phase": "ESO-04",
+              "repository": os.environ["GITHUB_REPOSITORY"],
+              "commit_sha": os.environ["GITHUB_SHA"],
+              "workflow": os.environ["GITHUB_WORKFLOW"],
+              "local_validation": local_result,
+              "central_compatibility": central_result,
+              "central_success_claim_allowed": central_success,
+              "local_controls_retained": True,
+              "rollback_reference": "main before this pull request",
+              "publication_authority": "human_required",
+              "restricted_ip_exposure": "not_authorised",
+              "authority_effect": "none",
+              "adoption_mode": "advisory",
+              "compatible": compatible,
+              "success_claim_allowed": compatible,
+          }
+          with open("eso-04-research-public-comparison-receipt.json", "w", encoding="utf-8") as handle:
+              json.dump(receipt, handle, indent=2, sort_keys=True)
+              handle.write("\n")
+          if not compatible:
+              raise SystemExit("Canary evidence is incomplete or incompatible")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eso-04-research-public-comparison-${{ github.run_id }}
+          path: eso-04-research-public-comparison-receipt.json
+          if-no-files-found: error
+          retention-days: 30
