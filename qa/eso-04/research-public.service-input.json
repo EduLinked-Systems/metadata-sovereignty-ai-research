@@ -1,0 +1,107 @@
+{
+  "inheritance": {
+    "enterprise_defaults": {
+      "feature_states": {
+        "validation": "advisory",
+        "release": "disabled"
+      },
+      "evidence": {
+        "retention_days": 30
+      }
+    },
+    "profile": {
+      "repository_lifecycle": "active",
+      "feature_states": {
+        "validation": "advisory"
+      }
+    },
+    "capability_bundle": {
+      "capabilities": [
+        "validate-repository-contract@1.0.0-draft.1"
+      ]
+    },
+    "repository_override": {
+      "evidence": {
+        "retention_days": 90
+      },
+      "feature_states": {
+        "release": "disabled"
+      }
+    }
+  },
+  "compatibility": {
+    "resolution_id": "EDULINKED-ESO-04-RESEARCH-PUBLIC-CANARY",
+    "declarations": [
+      {
+        "component": "repository_contract",
+        "identity": "repository-automation-config",
+        "compatible_range": ">=1.0.0 <2.0.0"
+      },
+      {
+        "component": "workflow",
+        "identity": "reusable-orchestration-compatibility",
+        "compatible_range": "1.0.0-candidate.1"
+      },
+      {
+        "component": "capability",
+        "identity": "validate-repository-contract",
+        "compatible_range": ">=1.0.0-draft.1 <2.0.0"
+      },
+      {
+        "component": "policy_bundle",
+        "identity": "edulinked.advisory.base",
+        "compatible_range": ">=1.0.0-candidate.1 <2.0.0"
+      },
+      {
+        "component": "profile",
+        "identity": "research-public",
+        "compatible_range": ">=1.0.0 <2.0.0"
+      },
+      {
+        "component": "schema",
+        "identity": "json-schema-draft-2020-12",
+        "compatible_range": "2020-12"
+      }
+    ],
+    "observations": [
+      {
+        "component": "repository_contract",
+        "identity": "repository-automation-config",
+        "version": "1.0.0",
+        "source_ref": "EduLinked-Systems/.github/schemas/repository-automation-config.schema.json"
+      },
+      {
+        "component": "workflow",
+        "identity": "reusable-orchestration-compatibility",
+        "version": "1.0.0-candidate.1",
+        "source_ref": "EduLinked-Systems/.github/.github/workflows/reusable-orchestration-compatibility.yml"
+      },
+      {
+        "component": "capability",
+        "identity": "validate-repository-contract",
+        "version": "1.0.0-draft.1",
+        "source_ref": "EduLinked-Systems/.github/qa/capability-orchestration/eso-01-capability-contract.valid.json"
+      },
+      {
+        "component": "policy_bundle",
+        "identity": "edulinked.advisory.base",
+        "version": "1.0.0-candidate.1",
+        "source_ref": "EduLinked-Systems/.github/qa/capability-orchestration/fixtures/policy-bundle.valid.json"
+      },
+      {
+        "component": "profile",
+        "identity": "research-public",
+        "version": "1.0.0",
+        "source_ref": "EduLinked-Systems/.github/qa/capability-orchestration/eso-00-compatibility-baseline.json"
+      },
+      {
+        "component": "schema",
+        "identity": "json-schema-draft-2020-12",
+        "version": "2020-12",
+        "source_ref": "https://json-schema.org/draft/2020-12/schema"
+      }
+    ],
+    "failure_mode": "fail_closed",
+    "authority_effect": "none"
+  }
+}
