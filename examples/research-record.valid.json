@@ -1,0 +1,68 @@
+{
+  "contract_version": "0.1.0",
+  "record_id": "msr:finding.metadata-sovereignty-001",
+  "record_type": "finding",
+  "title": "Metadata must preserve authority across automated transformations",
+  "description": "A governed research finding demonstrating the version 0.1 metadata sovereignty contract.",
+  "created": "2026-07-23",
+  "modified": "2026-07-23",
+  "authorship": {
+    "primary_author": "EduLinked student research team",
+    "organisation": "EduLinked Pty Ltd",
+    "contributors": []
+  },
+  "provenance": {
+    "source_type": "compiled",
+    "source_references": [
+      "METADATA_TEMPLATE.md",
+      "03_metadata-standards/comparison-table.md"
+    ],
+    "derivation_status": "human_derived",
+    "supersedes": []
+  },
+  "consent": {
+    "status": "not_required",
+    "scope": ["internal", "research", "education", "public"],
+    "notes": "This example contains no personal or participant data."
+  },
+  "accessibility": {
+    "status": "meets_declared_requirements",
+    "formats": ["standard", "plain_language"],
+    "wcag_target": "2.2_AA",
+    "review_notes": "Structured JSON is accompanied by human-readable documentation."
+  },
+  "ai_permissions": {
+    "summarise": true,
+    "translate": true,
+    "accessibility_transform": true,
+    "derive": false,
+    "training": false,
+    "commercial_use": false,
+    "citation_required": true
+  },
+  "human_review": {
+    "required": true,
+    "status": "approved",
+    "reviewer": "EduLinked authorised reviewer",
+    "reviewed_at": "2026-07-23"
+  },
+  "evidence": {
+    "claim_ids": ["claim:metadata-authority-001"],
+    "evidence_level": "exploratory",
+    "confidence": 0.7
+  },
+  "publication": {
+    "status": "approved",
+    "authority": "human_required",
+    "licence": "Repository licence applies"
+  },
+  "integrity": {
+    "version": "0.1.0",
+    "content_hash_status": "not_recorded"
+  },
+  "governance": {
+    "policy_references": ["METADATA_TEMPLATE.md"],
+    "sensitivity": "public",
+    "retention": "Retain while the specification remains active"
+  }
+}
