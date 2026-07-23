@@ -17,7 +17,8 @@ New contributors should begin with these canonical orientation files:
 - [STUDENT_RESEARCH_GUIDE.md](STUDENT_RESEARCH_GUIDE.md) - project context, research expectations, and contribution guidance
 - [RESEARCH_QUESTIONS.md](RESEARCH_QUESTIONS.md) - research areas, outputs, and target folders
 - [GLOSSARY.md](GLOSSARY.md) - shared terminology for metadata sovereignty, AI transparency, accessibility, and governance
-- [METADATA_TEMPLATE.md](METADATA_TEMPLATE.md) - standard record documentation structure for authorship, provenance, consent, and AI processing permissions
+- [METADATA_TEMPLATE.md](METADATA_TEMPLATE.md) - human-readable record documentation guidance
+- [Machine-Operable Research System](docs/MACHINE_OPERABLE_RESEARCH_SYSTEM.md) - versioned contract, validator, authority boundaries, and implementation lifecycle
 
 Use these files as the source of truth before adding or revising research content.
 
@@ -35,6 +36,18 @@ Key themes include:
 - long-term systems memory
 
 The project investigates **how AI can support these goals while maintaining strong ethical safeguards**. The intended pattern is human-led, metadata-first, and accessibility-aware.
+
+## Operational Baseline
+
+The repository now includes a version 0.1 machine-operable metadata sovereignty contract. Research records can declare authorship, provenance, consent, accessibility, AI permissions, human review, publication authority, and integrity in structured JSON.
+
+```bash
+python scripts/validate_metadata_sovereignty_records.py examples/research-record.valid.json
+```
+
+The validator fails closed when required governance fields are absent or when declarations conflict—for example, when withdrawn consent is paired with publication approval or mandatory human review is incomplete.
+
+Passing validation confirms contract completeness and internal consistency. It does not replace evidence appraisal, consent verification, accessibility audit, authorised human review, or publication approval.
 
 ## System Architecture Overview
 
@@ -71,6 +84,10 @@ See [07_diagrams/system_architecture.md](07_diagrams/system_architecture.md) for
 | `05_ethics-framework/` | Responsible AI governance analysis, checklists, and evaluation metrics |
 | `06_strategy-recommendations/` | AI strategy drafts, roadmap proposals, and implementation recommendations |
 | `07_diagrams/` | Conceptual system architecture diagrams |
+| `schemas/` | Versioned machine-readable governance contracts |
+| `examples/` | Valid reference records for implementation and testing |
+| `scripts/` | Deterministic local validation tools |
+| `docs/` | Operational architecture and implementation guidance |
 | `final-report/` | Draft and final report materials |
 
 ## Documentation Standards
@@ -80,7 +97,9 @@ When adding research outputs, contributors should:
 - use the shared terms in [GLOSSARY.md](GLOSSARY.md) consistently
 - document authorship, creation date, sources, and major revisions
 - apply [METADATA_TEMPLATE.md](METADATA_TEMPLATE.md) when analysing records, examples, or case studies
+- create a machine-readable record when the artefact enters a governed workflow
 - cite credible sources rather than relying only on promotional material
-- make accessibility, consent, human review, and AI transparency visible in recommendations
+- make accessibility, consent, human review, publication authority, and AI permissions explicit
+- treat missing permission as no permission
 
 Accessibility research resources are located in [`02_background_research/accessibility/`](02_background_research/accessibility/).

@@ -1,0 +1,44 @@
+name: Validate Metadata Sovereignty Records
+
+on:
+  pull_request:
+    paths:
+      - "schemas/**"
+      - "examples/**"
+      - "scripts/validate_metadata_sovereignty_records.py"
+      - "docs/MACHINE_OPERABLE_RESEARCH_SYSTEM.md"
+      - "METADATA_TEMPLATE.md"
+      - "README.md"
+      - ".github/workflows/validate-metadata-sovereignty.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "schemas/**"
+      - "examples/**"
+      - "scripts/validate_metadata_sovereignty_records.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Parse schema and governed examples
+        run: |
+          python -m json.tool schemas/metadata-sovereignty-research-record.schema.json > /dev/null
+          python -m json.tool examples/research-record.valid.json > /dev/null
+
+      - name: Compile validator
+        run: python -m py_compile scripts/validate_metadata_sovereignty_records.py
+
+      - name: Validate governed records
+        run: python scripts/validate_metadata_sovereignty_records.py examples/research-record.valid.json
