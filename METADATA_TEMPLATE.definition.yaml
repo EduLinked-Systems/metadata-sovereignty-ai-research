@@ -1,0 +1,34 @@
+schema_version: edulinked.stable-template-definition/v1.0
+template_id: MSA-TPL-METADATA-RECORD-001
+canonical_name: Metadata Sovereignty Record Documentation Template
+source_system: github
+source_owner: EduLinked-Systems/metadata-sovereignty-ai-research
+source_pointer: METADATA_TEMPLATE.md
+template_family: RECORD_METADATA_DOCUMENTATION
+purpose: Provide a reusable structure for authorship, provenance, consent, versioning, accessibility, sensitivity and AI-processing metadata.
+version_or_revision: 1.0.0
+authority_boundary: METADATA_SOVEREIGNTY_RECORD_DOCUMENTATION_TEMPLATE
+lifecycle_state: CURRENT
+maturity: SUBSTANTIVE_REUSABLE_TEMPLATE
+created_at: null
+last_validated_at: 2026-09-08
+validation_evidence: [METADATA_TEMPLATE.md]
+applicable_domains: [research_records, case_studies, advocacy_records, evidence_records, AI_processing_governance]
+intended_consumers: [researchers, students, governance workflows, AI-assisted record processing]
+required_inputs: [record_title, author_or_source, creation_date, document_purpose, consent_status, version]
+produced_outputs: [record_metadata, change_history, source_references, accessibility_format_state, sensitivity_state, AI_processing_permission]
+review_gate_refs: [EVIDENCE_REVIEW, PUBLIC_LANGUAGE_REVIEW]
+accessibility_requirements: [record_accessibility_formats, human_and_machine_interpretability]
+source_provenance:
+  authority: source-owning repository
+  provenance_is_first_class: true
+supersedes: []
+superseded_by: null
+machine_retrieval_terms: [metadata, provenance, authorship, consent, version history, AI permissions, record governance]
+example_or_fixture_refs: []
+known_limitations:
+  - Example values are illustrative and are not authoritative record facts.
+  - Template completion does not establish consent validity or source authenticity.
+instantiation_preconditions:
+  - source record or artefact exists
+  - metadata values are sourced rather than inferred where material
