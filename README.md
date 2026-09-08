@@ -22,6 +22,24 @@ New contributors should begin with these canonical orientation files:
 
 Use these files as the source of truth before adding or revising research content.
 
+## Repository authority boundary
+
+This repository is the **independently usable public research surface** for EduLinked Metadata Sovereignty. It does not own private product authority and must not be treated as an implementation mirror, integration client, operational gateway, or automatic projection of private product state.
+
+The paired private product-authority boundary is `EduLinked-coder/metadata-sovereignty`. That private repository owns protected product architecture, product-level governance decisions, commercial hypotheses, private implementation knowledge, and approved product policy. Its existence does not make private material public, and this public repository does not transfer research conclusions into production policy by itself.
+
+Preserve these boundaries:
+
+`PUBLIC_RESEARCH_SURFACE != PRIVATE_PRODUCT_AUTHORITY`
+
+`RESEARCH_CONCLUSION != PRODUCTION_POLICY`
+
+`PUBLIC_REPOSITORY != PRIVATE_IMPLEMENTATION_MIRROR`
+
+`PRIVATE_SOURCE_EXISTS != PUBLICATION_APPROVED`
+
+No public-to-private API, package, workflow, credential, checkout, artifact, or automatic synchronisation dependency is permitted. Only deliberately reviewed and sanitised research or publication packages may cross the visibility boundary under the authority defined by the source-owning repository.
+
 ## Project Overview
 
 The Metadata Sovereignty Alliance explores how metadata-first infrastructure can protect authorship and ethical record governance in AI-supported systems.
