@@ -36,6 +36,11 @@
       "role": "repository automation contract"
     },
     {
+      "source": "EduLinked-Systems/.github/scripts/validate-repository-automation-config.py",
+      "blob_sha": "297e345f21662139a56526889650edc9ca2c9c02",
+      "role": "authority invariant reference"
+    },
+    {
       "source": "EduLinked-Systems/.github/docs/standardised-repository-orchestration.md",
       "blob_sha": "24c95013d224702e4f5749e29e0cb4bd14439a5a",
       "role": "adoption and authority constraints"
@@ -53,10 +58,12 @@
   ],
   "change": {
     "binding_path": ".github/edulinked-automation.yml",
+    "binding_blob_sha": "1cae086382e6a8845764bc50cacabc828304558c",
     "contract_version": "1.0.0",
     "repository_profile": "research-public",
     "new_workflow_created": false,
-    "new_validator_created": false
+    "new_validator_created": false,
+    "existing_workflow_net_change": false
   },
   "authority_boundary": {
     "machine_actions": [
@@ -81,20 +88,53 @@
     "release_eligible": false,
     "public_release_authorised": false
   },
-  "validation_contract": {
-    "status_at_receipt_creation": "PENDING_EXACT_HEAD_CI",
-    "required_checks": [
-      "local-research-controls",
-      "central-compatibility",
-      "compare-evidence"
-    ],
-    "expected_machine_readable_artifact": "eso-04-research-public-comparison-<run_id>",
-    "success_claim_rule": "Only claim validated when the existing canary succeeds on the exact pull-request head."
+  "validation": {
+    "binding_contract": {
+      "status": "PASS",
+      "target_blob_sha": "1cae086382e6a8845764bc50cacabc828304558c",
+      "schema_blob_sha": "90ee04b1fc323315543ff84e30deda783cecaf71",
+      "authority_invariant_reference_sha": "297e345f21662139a56526889650edc9ca2c9c02",
+      "checks": [
+        "YAML parsed",
+        "required and additional-property constraints satisfied",
+        "contract_version=1.0.0",
+        "repository_profile=research-public",
+        "repository_lifecycle=active",
+        "machine actions are contract-permitted",
+        "merge_pr absent from machine authority",
+        "create_release absent from machine authority",
+        "public_release_authorised=false"
+      ]
+    },
+    "declared_local_commands": {
+      "status": "PASS",
+      "source_blobs": {
+        "schemas/metadata-sovereignty-research-record.schema.json": "c70070b385ef1b3973fb4e79c1cd204ca50ce5b5",
+        "examples/research-record.valid.json": "df706bc411749e954f8cd74190f7bbd0bdb4842b",
+        "scripts/validate_metadata_sovereignty_records.py": "e280c5bb728780577dce4494cc28c5c27e41605b"
+      },
+      "results": [
+        "schema JSON parsed",
+        "governed example JSON parsed",
+        "validator compiled",
+        "governed example validation passed: 1 record"
+      ]
+    },
+    "existing_canary_attempt": {
+      "run_id": 34269365206,
+      "head_sha": "b00dcddb0dd2be93fab2b6866d10dd959fb64faa",
+      "conclusion": "failure",
+      "jobs_created": 0,
+      "success_claim_allowed": false,
+      "treatment": "NOT_USED_AS_SUCCESS_EVIDENCE",
+      "note": "The temporary trigger expansion was reverted. The canary file is unchanged from source blob 36c2afff55faf9bb1b977675c5a046f6a6c9224f. The separate central workflow-failure exception remains unresolved and outside this binding repair."
+    }
   },
   "remaining_independent_exception": {
     "classification": "workflow-failure",
     "status": "requires_classification",
     "note": "The central receipt separately reports recent workflow failures. This binding repair does not classify or resolve them."
   },
+  "remaining_blocker": "Human review and merge are required before the binding exists on main and the canonical queue can be recomputed.",
   "next_continuation": "After human merge, rerun the central proactive orchestrator and verify only this eduos-binding finding is removed."
 }
