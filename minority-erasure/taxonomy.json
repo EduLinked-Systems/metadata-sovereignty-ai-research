@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Minority Erasure Public Taxonomy",
+  "release_status": "public_draft",
+  "governance_model": "Strategic Self-Advocacy Funding Impact System",
+  "concepts": [
+    {
+      "id": "minority_erasure",
+      "label": "Minority erasure",
+      "definition": "Removal, flattening, misclassification, de-authoring, or invisibilisation of a marginalised, under-represented, or structurally disadvantaged person or group in a record, system, summary, dataset, policy process, or public narrative.",
+      "risk_family": "erasure",
+      "requires_human_review": true
+    },
+    {
+      "id": "authorship_erasure",
+      "label": "Authorship erasure",
+      "definition": "Loss, misattribution, replacement, or weakening of the original author's role, authority, or contribution.",
+      "parent": "minority_erasure",
+      "risk_family": "authorship",
+      "requires_human_review": true
+    },
+    {
+      "id": "context_erasure",
+      "label": "Context erasure",
+      "definition": "Removal of social, cultural, historical, disability, access, language, geographic, or power context that materially affects meaning.",
+      "parent": "minority_erasure",
+      "risk_family": "context",
+      "requires_human_review": true
+    },
+    {
+      "id": "consent_erasure",
+      "label": "Consent erasure",
+      "definition": "Reuse of material outside the recorded consent scope, purpose, audience, format, timing, or withdrawal conditions.",
+      "parent": "minority_erasure",
+      "risk_family": "consent",
+      "requires_human_review": true
+    },
+    {
+      "id": "accessibility_erasure",
+      "label": "Accessibility erasure",
+      "definition": "Omission or downgrading of required communication and access supports.",
+      "parent": "minority_erasure",
+      "risk_family": "accessibility",
+      "requires_human_review": true
+    },
+    {
+      "id": "metadata_erasure",
+      "label": "Metadata erasure",
+      "definition": "Failure to preserve authorship, provenance, permissions, access needs, version history, review state, or withdrawal terms in durable metadata.",
+      "parent": "minority_erasure",
+      "risk_family": "metadata",
+      "requires_human_review": true
+    },
+    {
+      "id": "translation_erasure",
+      "label": "Translation erasure",
+      "definition": "Representation through another speaker, institution, summariser, or AI system in a way that changes authority, tone, meaning, uncertainty, or lived-experience significance.",
+      "parent": "minority_erasure",
+      "risk_family": "representation",
+      "requires_human_review": true
+    },
+    {
+      "id": "institutional_reframing",
+      "label": "Institutional reframing",
+      "definition": "Rewriting lived experience to protect, promote, simplify, or legitimise an organisation instead of preserving the author's meaning and authority.",
+      "parent": "minority_erasure",
+      "risk_family": "power",
+      "requires_human_review": true
+    }
+  ],
+  "review_rules": [
+    {
+      "id": "missing_author",
+      "if": "record.author.identity_status is missing or unknown",
+      "then": "mark erasure_risk as high and require human review"
+    },
+    {
+      "id": "missing_consent_scope",
+      "if": "record.consent.scope is missing",
+      "then": "treat as no publication permission"
+    },
+    {
+      "id": "ai_summary_without_review",
+      "if": "record.ai_use.summary_generated is true and record.human_review.completed is false",
+      "then": "do not publish as authoritative"
+    },
+    {
+      "id": "accessibility_supports_removed",
+      "if": "record.accessibility.required_formats contains items not present in record.publication.formats",
+      "then": "mark accessibility_erasure risk"
+    }
+  ]
+}

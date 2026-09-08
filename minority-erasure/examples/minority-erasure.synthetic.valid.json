@@ -1,0 +1,75 @@
+{
+  "record_id": "synthetic-minority-erasure-001",
+  "schema_version": "0.1.0",
+  "record_type": "synthetic_governance_example",
+  "title": "Synthetic example of erasure risk documentation",
+  "synthetic": true,
+  "real_person_or_case": false,
+  "author": {
+    "identity_status": "synthetic_group_author",
+    "public_name": "Synthetic Community Advisory Group",
+    "role": "example_author",
+    "authorship_preserved": true
+  },
+  "consent": {
+    "scope": "public demonstration of metadata structure only",
+    "limitations": [
+      "not a real story",
+      "not suitable as lived-experience evidence",
+      "not suitable for model training as a factual case"
+    ],
+    "withdrawal_supported": true,
+    "publication_approved": true
+  },
+  "accessibility": {
+    "required_formats": [
+      "plain_language",
+      "screen_reader_structured"
+    ],
+    "publication_formats": [
+      "markdown",
+      "json"
+    ],
+    "accessibility_review_required": true,
+    "accessibility_review_completed": false
+  },
+  "erasure_risk": {
+    "overall_level": "medium",
+    "risk_labels": [
+      "authorship_erasure",
+      "context_erasure",
+      "metadata_erasure"
+    ],
+    "risk_summary": "The synthetic example shows how authorship and context can be weakened when a community-authored record is converted into a generic institutional summary.",
+    "human_review_required": true
+  },
+  "ai_use": {
+    "ai_assisted": true,
+    "allowed_actions": [
+      "metadata_gap_check",
+      "taxonomy_mapping",
+      "plain_language_draft"
+    ],
+    "prohibited_actions": [
+      "publication_approval",
+      "consent_inference",
+      "community_representation_claim"
+    ]
+  },
+  "human_review": {
+    "completed": false,
+    "required_before_publication_as_evidence": true,
+    "review_authority": "accountable human reviewer"
+  },
+  "publication": {
+    "status": "public_example",
+    "evidence_status": "not_evidence",
+    "machine_use_status": "structure_reference_only"
+  },
+  "provenance": {
+    "created_by": "EduLinked Systems",
+    "created_date": "2026-09-08",
+    "source_basis": "synthetic release pack",
+    "version": "v0.1.0"
+  }
+}
