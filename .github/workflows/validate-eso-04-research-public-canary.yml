@@ -4,8 +4,6 @@ on:
   pull_request:
     paths:
       - ".github/workflows/validate-eso-04-research-public-canary.yml"
-      - ".github/edulinked-automation.yml"
-      - "evidence/repository-automation-receipt.json"
       - "qa/eso-04/research-public.service-input.json"
       - "README.md"
       - "NAVIGATION.md"
