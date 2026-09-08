@@ -1,0 +1,34 @@
+schema_version: edulinked.stable-template-definition/v1.0
+template_id: MSA-TPL-AI-FEATURE-EVALUATION-001
+canonical_name: AI Feature Evaluation Template
+source_system: github
+source_owner: EduLinked-Systems/metadata-sovereignty-ai-research
+source_pointer: AI_FEATURE_EVALUATION_TEMPLATE.md
+template_family: AI_CAPABILITY_EVALUATION
+purpose: Evaluate AI features for usefulness, accessibility, transparency, metadata compatibility, ethical risk and governance suitability.
+version_or_revision: 1.0.0
+authority_boundary: METADATA_SOVEREIGNTY_AI_CAPABILITY_REVIEW_TEMPLATE
+lifecycle_state: CURRENT
+maturity: SUBSTANTIVE_REUSABLE_TEMPLATE
+created_at: null
+last_validated_at: 2026-09-08
+validation_evidence: [AI_FEATURE_EVALUATION_TEMPLATE.md]
+applicable_domains: [AI_tool_evaluation, accessibility, metadata_governance, ethical_AI_review]
+intended_consumers: [researchers, students, governance reviewers, AI capability selection workflows]
+required_inputs: [feature_name, description, intended_purpose, required_inputs, metadata_requirements]
+produced_outputs: [accessibility_impact, transparency_requirements, human_oversight, risks_and_limitations, ethical_considerations, suitability_assessment, recommendation]
+review_gate_refs: [ACCESSIBILITY_REVIEW, EVIDENCE_REVIEW, OTHER_PROTECTED_REVIEW]
+accessibility_requirements: [explicit_accessibility_impact_review, accessible_output_consideration]
+source_provenance:
+  authority: source-owning repository
+  evaluation_must_preserve_source_evidence: true
+supersedes: []
+superseded_by: null
+machine_retrieval_terms: [AI feature review, AI capability evaluation, ethical AI, accessibility impact, metadata requirements, human oversight]
+example_or_fixture_refs: []
+known_limitations:
+  - Suitability rating is an evaluation aid, not execution or procurement authority.
+  - Template completion does not prove safety, accessibility or legal compliance.
+instantiation_preconditions:
+  - AI feature or capability being evaluated is identifiable
+  - evidence for claims can be referenced
