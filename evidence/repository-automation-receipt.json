@@ -1,0 +1,100 @@
+{
+  "receipt_id": "EDULINKED-ORCHESTRATION-EXCEPTION-2026-09-09-METADATA-SOVEREIGNTY-RESEARCH-BINDING",
+  "receipt_type": "repository_automation_binding",
+  "repository": "EduLinked-Systems/metadata-sovereignty-ai-research",
+  "exception": {
+    "classification": "eduos-binding",
+    "status": "patchable",
+    "action": "open_draft_pr",
+    "source": "EduLinked-Systems/.github/reports/orchestration/latest.json",
+    "source_blob_sha": "94e0b697f038b31ab346e716219fd620a060c003",
+    "queue_summary": {
+      "repositories_inspected": 74,
+      "exceptions": 92
+    },
+    "disposition": "PROPOSED_BINDING_PENDING_HUMAN_MERGE"
+  },
+  "source_authority": {
+    "readme": {
+      "path": "README.md",
+      "blob_sha": "f07508db711b8e67ae313255edcac9339fc03970",
+      "boundary": "PUBLIC_RESEARCH_SURFACE != PRIVATE_PRODUCT_AUTHORITY"
+    },
+    "compatibility_input": {
+      "path": "qa/eso-04/research-public.service-input.json",
+      "blob_sha": "b938d6bee9cda6135770a003ce70575459a7c673",
+      "repository_lifecycle": "active",
+      "profile": "research-public",
+      "release_feature_state": "disabled",
+      "authority_effect": "none"
+    }
+  },
+  "reused_capabilities": [
+    {
+      "source": "EduLinked-Systems/.github/schemas/repository-automation-config.schema.json",
+      "blob_sha": "90ee04b1fc323315543ff84e30deda783cecaf71",
+      "role": "repository automation contract"
+    },
+    {
+      "source": "EduLinked-Systems/.github/docs/standardised-repository-orchestration.md",
+      "blob_sha": "24c95013d224702e4f5749e29e0cb4bd14439a5a",
+      "role": "adoption and authority constraints"
+    },
+    {
+      "source": ".github/workflows/validate-eso-04-research-public-canary.yml",
+      "blob_sha": "36c2afff55faf9bb1b977675c5a046f6a6c9224f",
+      "role": "existing source-owned compatibility and evidence workflow"
+    },
+    {
+      "source": ".github/workflows/validate-metadata-sovereignty.yml",
+      "blob_sha": "ecf68e29f97b1987596bbb9cd4cb9ac157977bf5",
+      "role": "existing source-owned governed-record validator"
+    }
+  ],
+  "change": {
+    "binding_path": ".github/edulinked-automation.yml",
+    "contract_version": "1.0.0",
+    "repository_profile": "research-public",
+    "new_workflow_created": false,
+    "new_validator_created": false
+  },
+  "authority_boundary": {
+    "machine_actions": [
+      "inspect",
+      "validate",
+      "classify",
+      "comment",
+      "label",
+      "open_draft_pr",
+      "rerun_failed_checks"
+    ],
+    "human_review_required": [
+      "merge_pr",
+      "create_release",
+      "change_branch_protection",
+      "approve_public_release",
+      "publication_approval",
+      "production_policy_promotion",
+      "private_product_sync",
+      "governance_promotion"
+    ],
+    "release_eligible": false,
+    "public_release_authorised": false
+  },
+  "validation_contract": {
+    "status_at_receipt_creation": "PENDING_EXACT_HEAD_CI",
+    "required_checks": [
+      "local-research-controls",
+      "central-compatibility",
+      "compare-evidence"
+    ],
+    "expected_machine_readable_artifact": "eso-04-research-public-comparison-<run_id>",
+    "success_claim_rule": "Only claim validated when the existing canary succeeds on the exact pull-request head."
+  },
+  "remaining_independent_exception": {
+    "classification": "workflow-failure",
+    "status": "requires_classification",
+    "note": "The central receipt separately reports recent workflow failures. This binding repair does not classify or resolve them."
+  },
+  "next_continuation": "After human merge, rerun the central proactive orchestrator and verify only this eduos-binding finding is removed."
+}
