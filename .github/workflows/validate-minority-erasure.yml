@@ -1,0 +1,38 @@
+name: Validate Minority Erasure Records
+
+on:
+  pull_request:
+    paths:
+      - "minority-erasure/**"
+      - "scripts/validate_minority_erasure_records.py"
+      - ".github/workflows/validate-minority-erasure.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "minority-erasure/**"
+      - "scripts/validate_minority_erasure_records.py"
+      - ".github/workflows/validate-minority-erasure.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile validator
+        run: python -m py_compile scripts/validate_minority_erasure_records.py
+
+      - name: Validate minority erasure records
+        run: |
+          python scripts/validate_minority_erasure_records.py \
+            --schema minority-erasure/json-schema/minority-erasure-record.schema.json \
+            minority-erasure/examples/*.json
