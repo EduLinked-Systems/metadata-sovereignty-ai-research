@@ -1,0 +1,56 @@
+{
+  "record_id": "synthetic-institutional-reframing-001",
+  "schema_version": "0.1.0",
+  "record_type": "synthetic_governance_example",
+  "title": "Synthetic example of institutional reframing risk",
+  "synthetic": true,
+  "real_person_or_case": false,
+  "author": {
+    "identity_status": "synthetic_group_author",
+    "public_name": "Synthetic Lived Experience Working Group",
+    "role": "example_author",
+    "authorship_preserved": false
+  },
+  "consent": {
+    "scope": "public demonstration of metadata structure only",
+    "limitations": [
+      "not a real organisational incident",
+      "not suitable as evidence against a named organisation"
+    ],
+    "withdrawal_supported": true,
+    "publication_approved": true
+  },
+  "accessibility": {
+    "required_formats": ["plain_language", "screen_reader_structured"],
+    "publication_formats": ["markdown", "json"],
+    "accessibility_review_required": true,
+    "accessibility_review_completed": false
+  },
+  "erasure_risk": {
+    "overall_level": "high",
+    "risk_labels": ["institutional_reframing", "authorship_erasure", "translation_erasure"],
+    "risk_summary": "This synthetic record shows institutional reframing risk where a group-authored account could be rewritten into a neutral organisational improvement story that weakens author authority.",
+    "human_review_required": true
+  },
+  "ai_use": {
+    "ai_assisted": true,
+    "allowed_actions": ["meaning_loss_check", "taxonomy_mapping"],
+    "prohibited_actions": ["replace_author_meaning", "claim_community_representation", "approve_publication"]
+  },
+  "human_review": {
+    "completed": false,
+    "required_before_publication_as_evidence": true,
+    "review_authority": "accountable human reviewer"
+  },
+  "publication": {
+    "status": "public_example",
+    "evidence_status": "not_evidence",
+    "machine_use_status": "structure_reference_only"
+  },
+  "provenance": {
+    "created_by": "EduLinked Systems",
+    "created_date": "2026-09-09",
+    "source_basis": "synthetic release pack",
+    "version": "v0.2.0"
+  }
+}

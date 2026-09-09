@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Minority Erasure Controlled Vocabulary",
+  "status": "public_draft",
+  "preferred_terms": [
+    {
+      "id": "minority_erasure",
+      "label": "minority erasure",
+      "use_for": ["invisibilisation", "flattening", "de-authoring", "misclassification"]
+    },
+    {
+      "id": "authorship_erasure",
+      "label": "authorship erasure",
+      "use_for": ["misattribution", "loss of author authority", "institutional replacement of author"]
+    },
+    {
+      "id": "context_erasure",
+      "label": "context erasure",
+      "use_for": ["loss of meaning", "removed access context", "removed power context"]
+    },
+    {
+      "id": "consent_erasure",
+      "label": "consent erasure",
+      "use_for": ["permission loss", "out-of-scope reuse", "withdrawal ignored"]
+    },
+    {
+      "id": "accessibility_erasure",
+      "label": "accessibility erasure",
+      "use_for": ["access needs omitted", "communication supports removed", "accessible format loss"]
+    },
+    {
+      "id": "institutional_reframing",
+      "label": "institutional reframing",
+      "use_for": ["organisational sanitisation", "protective rewriting", "authority shift"]
+    }
+  ],
+  "avoid_terms_without_context": [
+    "vulnerable voices",
+    "special needs",
+    "hard to reach",
+    "low functioning",
+    "non-compliant",
+    "voiceless"
+  ],
+  "machine_guidance": [
+    "Prefer terms that preserve authorship and agency.",
+    "Do not infer consent from public availability.",
+    "Do not replace access needs with generic accessibility labels.",
+    "Use unknown when evidence is missing."
+  ]
+}
