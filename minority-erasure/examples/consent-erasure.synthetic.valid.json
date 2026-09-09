@@ -1,0 +1,57 @@
+{
+  "record_id": "synthetic-consent-erasure-001",
+  "schema_version": "0.1.0",
+  "record_type": "synthetic_governance_example",
+  "title": "Synthetic example of consent erasure risk",
+  "synthetic": true,
+  "real_person_or_case": false,
+  "author": {
+    "identity_status": "synthetic_group_author",
+    "public_name": "Synthetic Advisory Participant",
+    "role": "example_author",
+    "authorship_preserved": true
+  },
+  "consent": {
+    "scope": "internal workshop use only",
+    "limitations": [
+      "not approved for public release",
+      "not approved for training data",
+      "not approved for promotional use"
+    ],
+    "withdrawal_supported": true,
+    "publication_approved": false
+  },
+  "accessibility": {
+    "required_formats": ["plain_language"],
+    "publication_formats": ["json"],
+    "accessibility_review_required": true,
+    "accessibility_review_completed": false
+  },
+  "erasure_risk": {
+    "overall_level": "high",
+    "risk_labels": ["consent_erasure", "metadata_erasure"],
+    "risk_summary": "This synthetic record shows high consent erasure risk because the stated consent scope is internal only and publication is not approved.",
+    "human_review_required": true
+  },
+  "ai_use": {
+    "ai_assisted": true,
+    "allowed_actions": ["metadata_gap_check"],
+    "prohibited_actions": ["publication_approval", "consent_inference", "training_data_conversion"]
+  },
+  "human_review": {
+    "completed": false,
+    "required_before_publication_as_evidence": true,
+    "review_authority": "accountable human reviewer"
+  },
+  "publication": {
+    "status": "not_publishable",
+    "evidence_status": "review_required",
+    "machine_use_status": "not_for_training"
+  },
+  "provenance": {
+    "created_by": "EduLinked Systems",
+    "created_date": "2026-09-09",
+    "source_basis": "synthetic release pack",
+    "version": "v0.2.0"
+  }
+}
