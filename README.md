@@ -26,11 +26,32 @@ Use these files as the source of truth before adding or revising research conten
 
 This repository is the **independently usable public research surface** for EduLinked Metadata Sovereignty. It does not own private product authority and must not be treated as an implementation mirror, integration client, operational gateway, or automatic projection of private product state.
 
-The paired private product-authority boundary is `EduLinked-coder/metadata-sovereignty`. That private repository owns protected product architecture, product-level governance decisions, commercial hypotheses, private implementation knowledge, and approved product policy. Its existence does not make private material public, and this public repository does not transfer research conclusions into production policy by itself.
+The paired private boundary is `EduLinked-coder/metadata-sovereignty`. Its source-owned `repo.yaml` declares `role: private-product-authority` while `metadata.status: candidate`, and its README describes it as the **candidate private product-authority boundary**. Accordingly, this public repository must not describe that candidate boundary as already canonical or production-approved. The private repository contains the protected candidate product workspace for product architecture, product-level governance decisions, commercial hypotheses, private implementation knowledge, and policies governing derived-output generation and release; human approval remains required for canonical permission semantics, consent policy, AI-processing authority, production deployment, commercial commitments, and cross-visibility release.
+
+The current product-roadmaps alignment is also `proposed` with `review_required: true`. Neither that portfolio projection nor the private repository role label independently proves final canonical product authority.
+
+```yaml
+productAuthorityBinding:
+  publicResearchSurface:
+    repository: EduLinked-Systems/metadata-sovereignty-ai-research
+    role: independent-public-research-surface
+  pairedPrivateBoundary:
+    repository: EduLinked-coder/metadata-sovereignty
+    declaredRole: private-product-authority
+    lifecycleStatus: candidate
+    canonicalProductAuthorityEstablished: false
+  operationalDependencyAllowed: false
+  automaticCrossVisibilitySyncAllowed: false
+  sanitisedExportRequiresHumanReview: true
+  sourceAuthorityTransfersOnCrossVisibilityRelease: false
+  publicResearchMayImplyProductApproval: false
+```
 
 Preserve these boundaries:
 
 `PUBLIC_RESEARCH_SURFACE != PRIVATE_PRODUCT_AUTHORITY`
+
+`CANDIDATE_PRIVATE_PRODUCT_AUTHORITY != CANONICAL_PRODUCT_AUTHORITY`
 
 `RESEARCH_CONCLUSION != PRODUCTION_POLICY`
 
@@ -39,6 +60,10 @@ Preserve these boundaries:
 `PRIVATE_SOURCE_EXISTS != PUBLICATION_APPROVED`
 
 No public-to-private API, package, workflow, credential, checkout, artifact, or automatic synchronisation dependency is permitted. Only deliberately reviewed and sanitised research or publication packages may cross the visibility boundary under the authority defined by the source-owning repository.
+
+### Binding validation receipt — 2026-09-09
+
+Inspected the canonical repository ecosystem registry, this public source-owned repository, `EduLinked-coder/metadata-sovereignty` (`README.md` and `repo.yaml`), and `EduLinked-Pty-Ltd/product-roadmaps/registry/repository-alignments.json`. The only change in this receipt is to reconcile the public-facing authority wording with the stronger source-owned evidence that the paired private boundary remains **candidate** and the portfolio alignment remains **proposed/review-required**. Public research independence, private-source isolation, provenance, human review for cross-visibility release, and the prohibition on automatic authority transfer are unchanged. Remaining uncertainty: a protected human decision establishing final canonical private product authority has not been evidenced in the inspected sources, so this binding must remain candidate until such evidence exists.
 
 ## Project Overview
 
