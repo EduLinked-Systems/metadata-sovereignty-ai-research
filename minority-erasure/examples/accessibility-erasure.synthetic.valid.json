@@ -1,0 +1,56 @@
+{
+  "record_id": "synthetic-accessibility-erasure-001",
+  "schema_version": "0.1.0",
+  "record_type": "synthetic_governance_example",
+  "title": "Synthetic example of accessibility erasure risk",
+  "synthetic": true,
+  "real_person_or_case": false,
+  "author": {
+    "identity_status": "synthetic_group_author",
+    "public_name": "Synthetic Access Review Group",
+    "role": "example_author",
+    "authorship_preserved": true
+  },
+  "consent": {
+    "scope": "public demonstration of metadata structure only",
+    "limitations": [
+      "not a real accessibility request",
+      "not suitable as evidence of individual need"
+    ],
+    "withdrawal_supported": true,
+    "publication_approved": true
+  },
+  "accessibility": {
+    "required_formats": ["plain_language", "aac_summary", "screen_reader_structured"],
+    "publication_formats": ["markdown"],
+    "accessibility_review_required": true,
+    "accessibility_review_completed": false
+  },
+  "erasure_risk": {
+    "overall_level": "high",
+    "risk_labels": ["accessibility_erasure", "context_erasure"],
+    "risk_summary": "This synthetic record shows accessibility erasure risk because required communication supports are not present in the planned publication formats.",
+    "human_review_required": true
+  },
+  "ai_use": {
+    "ai_assisted": true,
+    "allowed_actions": ["accessibility_gap_check", "plain_language_draft"],
+    "prohibited_actions": ["claim_accessibility_conformance", "remove_required_access_formats"]
+  },
+  "human_review": {
+    "completed": false,
+    "required_before_publication_as_evidence": true,
+    "review_authority": "accessibility reviewer"
+  },
+  "publication": {
+    "status": "public_draft",
+    "evidence_status": "review_required",
+    "machine_use_status": "structure_reference_only"
+  },
+  "provenance": {
+    "created_by": "EduLinked Systems",
+    "created_date": "2026-09-09",
+    "source_basis": "synthetic release pack",
+    "version": "v0.2.0"
+  }
+}
