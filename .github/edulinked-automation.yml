@@ -1,0 +1,61 @@
+contract_version: 1.0.0
+repository_profile: research-public
+repository_lifecycle: active
+
+capabilities:
+  - capability_ref: validate-repository-contract
+    version: 1.0.0-draft.1
+
+policy_bundles:
+  - bundle_ref: edulinked.advisory.base
+    version: 1.0.0-candidate.1
+
+feature_states:
+  validation: advisory
+  release: disabled
+
+authority:
+  machine_actions:
+    - inspect
+    - validate
+    - classify
+    - comment
+    - label
+    - open_draft_pr
+    - rerun_failed_checks
+  human_review_required:
+    - merge_pr
+    - create_release
+    - change_branch_protection
+    - approve_public_release
+    - publication_approval
+    - production_policy_promotion
+    - private_product_sync
+    - governance_promotion
+
+validation:
+  required_checks:
+    - local-research-controls
+    - central-compatibility
+    - compare-evidence
+  commands:
+    - name: Parse metadata sovereignty schema and governed example
+      run: |
+        python -m json.tool schemas/metadata-sovereignty-research-record.schema.json > /dev/null
+        python -m json.tool examples/research-record.valid.json > /dev/null
+    - name: Compile metadata sovereignty validator
+      run: python -m py_compile scripts/validate_metadata_sovereignty_records.py
+    - name: Validate governed research record
+      run: python scripts/validate_metadata_sovereignty_records.py examples/research-record.valid.json
+
+evidence:
+  required_artifacts:
+    - eso-04-research-public-comparison
+  receipt_path: evidence/repository-automation-receipt.json
+
+release:
+  eligible: false
+  public_release_authorised: false
+  ip_classification: public
+
+exceptions: []
