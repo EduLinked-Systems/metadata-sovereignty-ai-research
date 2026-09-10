@@ -26,6 +26,8 @@ Use these files as the source of truth before adding or revising research conten
 
 **STOP BEFORE WRITING, COMMITTING, OPENING A PULL REQUEST, GENERATING A FIXTURE, OR COPYING MATERIAL INTO THIS REPOSITORY. THIS REPOSITORY IS PUBLIC.**
 
+**MANDATORY: read and apply the [People, Client, Consent and Metadata Sovereignty Gate](docs/PEOPLE_CLIENT_CONSENT_SOVEREIGNTY_GATE.md) before any repository mutation involving people, clients, participants, co-designers, private sources, consent, accessibility/disability information, lived experience, machine inference, or cross-visibility material. If subject, source, purpose, authority, permitted processing or permitted disclosure cannot be established, FAIL CLOSED and do not publish.**
+
 Every human contributor, automation, coding agent, AI assistant, research agent, integration, and workflow that can create or modify repository content MUST treat every proposed addition as **PUBLIC INTERNET DISCLOSURE** before it is written. Access to private EduLinked systems does **not** grant permission to publish information from those systems here.
 
 ### Fail-closed rule
@@ -41,6 +43,12 @@ If there is any uncertainty about whether information is safe and authorised for
 `CAN_INFER != CAN_PUBLISH`
 
 `SANITISED != APPROVED_UNTIL_REVIEWED`
+
+`CLIENT_INFORMATION != ORGANISATIONAL_PUBLIC_KNOWLEDGE`
+
+`CONSENT != PERMISSION != AUTHORITY != PUBLICATION_AUTHORITY`
+
+`SELF_ASSERTION != THIRD_PARTY_ASSERTION != MACHINE_INFERENCE`
 
 ### Never publish here without explicit, attributable public-release authority
 
@@ -62,12 +70,13 @@ Before every repository mutation, an agent MUST:
 
 1. confirm that the target repository is public and treat the proposed diff as a publication event;
 2. identify the source owner and visibility of every non-public input used to produce the proposed content;
-3. minimise the proposed content to public research, public standards, sanitised architecture, or synthetic/conformance fixtures wherever possible;
-4. preserve source authority by linking or referencing only where the referenced material is itself safe and authorised to expose;
-5. prefer abstract or synthetic proving cases over real people, clients, partners, participants, businesses, applications, contracts, or relationships;
-6. check the complete diff, including filenames, examples, comments, test fixtures, logs, screenshots, metadata, commit messages and pull-request text, for disclosure risk;
-7. stop and request authorised human review when public-release authority is absent, ambiguous, stale, contradicted, or cannot be evidenced;
-8. never interpret successful validation, an existing public repository, prior publication, technical access, or a user's general permission to work as blanket permission to disclose new protected information.
+3. establish the subject, purpose, authority, permitted processing and permitted disclosure for people/client information before using it;
+4. minimise the proposed content to public research, public standards, sanitised architecture, or synthetic/conformance fixtures wherever possible;
+5. preserve source authority by linking or referencing only where the referenced material is itself safe and authorised to expose;
+6. prefer abstract or synthetic proving cases over real people, clients, partners, participants, businesses, applications, contracts, or relationships;
+7. check the complete diff, including filenames, examples, comments, test fixtures, logs, screenshots, metadata, commit messages and pull-request text, for disclosure risk;
+8. stop and request authorised human review when public-release authority is absent, ambiguous, stale, contradicted, or cannot be evidenced;
+9. never interpret successful validation, an existing public repository, prior publication, technical access, or a user's general permission to work as blanket permission to disclose new protected information.
 
 ### Public-safe pattern
 
