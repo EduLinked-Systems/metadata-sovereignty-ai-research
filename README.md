@@ -47,6 +47,52 @@ productAuthorityBinding:
   publicResearchMayImplyProductApproval: false
 ```
 
+### Human-facing publication projection binding
+
+The canonical human-facing publication surface for the research in this repository is the **public GitHub repository itself**. GitHub repository metadata currently reports `has_pages: true`, but no repository homepage is configured and the source-controlled workflow directory contains validation workflows only; no source-controlled Pages deployment workflow establishes a separate approved publication route.
+
+```yaml
+publicationProjectionBinding:
+  sourceRepository: EduLinked-Systems/metadata-sovereignty-ai-research
+  sourceRole: independent-public-research-surface
+  canonicalHumanFacingProjection:
+    type: github-repository
+    url: https://github.com/EduLinked-Systems/metadata-sovereignty-ai-research
+    status: active-public-research-surface
+  githubPages:
+    enabledInRepositoryMetadata: true
+    configuredRepositoryHomepage: null
+    sourceControlledDeploymentWorkflowPresent: false
+    approvedPublicationDestinationEstablished: false
+    canonicalPublicationAuthorityEstablished: false
+    state: TECHNICAL_CONFIGURATION_PRESENT_PUBLICATION_ROUTE_UNRESOLVED
+  publicationAuthority:
+    mode: human-review-gated
+    sourceAuthorityTransfersOnProjection: false
+  invariants:
+    githubPagesEnabledEqualsPublicationApproval: false
+    technicalHostingEqualsCanonicalHumanProjection: false
+    repositoryPublicEqualsPrivateProductRelease: false
+    validationSuccessEqualsPublicationApproval: false
+  continuation:
+    requiredBeforePagesCanBeTreatedAsPublicationSurface:
+      - attributable human publication decision naming the exact Pages destination and scope
+      - source-owned deployment configuration or receipt proving the route
+      - confirmation that the route does not transfer source or private product authority
+```
+
+This binding prevents machines or people from inferring a second canonical publication surface merely because GitHub Pages is enabled. Until the continuation evidence exists, Pages is technical repository configuration only; the public GitHub repository remains the evidenced human-facing research projection.
+
+### Publication projection validation receipt — 2026-09-10
+
+- **Canonical registry inspected:** `EduLinked-Systems/canonical-repository-ecosystem-registry` continues to classify this repository as `ACTIVE_RESEARCH_AND_PUBLICATION_WORKSPACE` / Metadata Sovereignty Public Research.
+- **Source inspected:** this README at source head `09c106013c873ae557162620044bbed551e68791` before the binding change.
+- **Repository publication configuration inspected:** GitHub repository metadata reports `visibility: public`, `has_pages: true`, and `homepage: null`.
+- **Deployment-path check:** `.github/workflows/` contains validation workflows only (`validate-eso-04-research-public-canary.yml`, `validate-metadata-sovereignty.yml`, and `validate-minority-erasure.yml`); no source-controlled Pages deployment workflow was found.
+- **What changed:** the existing public-research authority declaration now explicitly binds the public GitHub repository as the current human-facing research projection and classifies GitHub Pages as unresolved technical configuration rather than publication authority.
+- **What did not change:** private product authority remains candidate and isolated; no product authority, release permission, publication approval, implementation authority, or cross-visibility synchronisation was inferred or transferred.
+- **Remaining uncertainty:** the exact GitHub Pages source, URL, purpose, and any repository-setting-level deployment path are not proven by the inspected source evidence. Re-enter only when attributable publication evidence or source-owned deployment evidence establishes that route.
+
 Preserve these boundaries:
 
 `PUBLIC_RESEARCH_SURFACE != PRIVATE_PRODUCT_AUTHORITY`
@@ -58,6 +104,8 @@ Preserve these boundaries:
 `PUBLIC_REPOSITORY != PRIVATE_IMPLEMENTATION_MIRROR`
 
 `PRIVATE_SOURCE_EXISTS != PUBLICATION_APPROVED`
+
+`GITHUB_PAGES_ENABLED != PUBLICATION_APPROVED`
 
 No public-to-private API, package, workflow, credential, checkout, artifact, or automatic synchronisation dependency is permitted. Only deliberately reviewed and sanitised research or publication packages may cross the visibility boundary under the authority defined by the source-owning repository.
 
