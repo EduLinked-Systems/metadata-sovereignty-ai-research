@@ -22,6 +22,72 @@ New contributors should begin with these canonical orientation files:
 
 Use these files as the source of truth before adding or revising research content.
 
+## 🚨 Mandatory public-repository disclosure gate for humans and AI agents
+
+**STOP BEFORE WRITING, COMMITTING, OPENING A PULL REQUEST, GENERATING A FIXTURE, OR COPYING MATERIAL INTO THIS REPOSITORY. THIS REPOSITORY IS PUBLIC.**
+
+Every human contributor, automation, coding agent, AI assistant, research agent, integration, and workflow that can create or modify repository content MUST treat every proposed addition as **PUBLIC INTERNET DISCLOSURE** before it is written. Access to private EduLinked systems does **not** grant permission to publish information from those systems here.
+
+### Fail-closed rule
+
+If there is any uncertainty about whether information is safe and authorised for public release, **DO NOT WRITE IT TO THIS REPOSITORY**. Keep it at its source owner or protected private boundary and escalate the release decision for authorised human review.
+
+`ACCESS_TO_INFORMATION != AUTHORITY_TO_PUBLISH`
+
+`PRIVATE_SOURCE_EXISTS != PUBLICATION_APPROVED`
+
+`CAN_RETRIEVE != CAN_DISCLOSE`
+
+`CAN_INFER != CAN_PUBLISH`
+
+`SANITISED != APPROVED_UNTIL_REVIEWED`
+
+### Never publish here without explicit, attributable public-release authority
+
+Do not add or reproduce:
+
+- personal data, participant records, private contact details, private identifiers, accessibility information, health information, support information, or other sensitive information about identifiable people;
+- private client, partner, workforce, supplier, stakeholder, learner, participant, co-designer, community, or relationship evidence;
+- actual consent records, consent receipts, individual permission states, protected decisions, or source-owned authority records;
+- private email, SharePoint, OneDrive, Google Drive, CRM, application, finance, contract, meeting, case-management, or other internal evidence or document contents;
+- credentials, tokens, API keys, secrets, private endpoints, security controls, exploitable infrastructure details, or operational information that would materially increase security risk;
+- commercially sensitive pricing, margins, budgets, negotiations, procurement strategy, contract terms, unpublished product strategy, confidential implementation knowledge, or protected intellectual property;
+- private repository content merely because an agent can access it;
+- named-person proving cases where the same semantic behaviour can be tested with a synthetic or sanitised fixture;
+- machine-generated inferences about identifiable people or organisations unless the inference itself is explicitly authorised for public release.
+
+### Required agent behaviour
+
+Before every repository mutation, an agent MUST:
+
+1. confirm that the target repository is public and treat the proposed diff as a publication event;
+2. identify the source owner and visibility of every non-public input used to produce the proposed content;
+3. minimise the proposed content to public research, public standards, sanitised architecture, or synthetic/conformance fixtures wherever possible;
+4. preserve source authority by linking or referencing only where the referenced material is itself safe and authorised to expose;
+5. prefer abstract or synthetic proving cases over real people, clients, partners, participants, businesses, applications, contracts, or relationships;
+6. check the complete diff, including filenames, examples, comments, test fixtures, logs, screenshots, metadata, commit messages and pull-request text, for disclosure risk;
+7. stop and request authorised human review when public-release authority is absent, ambiguous, stale, contradicted, or cannot be evidenced;
+8. never interpret successful validation, an existing public repository, prior publication, technical access, or a user's general permission to work as blanket permission to disclose new protected information.
+
+### Public-safe pattern
+
+Public architecture may describe **generic semantic structures, standards mappings, invariants, synthetic examples, conformance tests, and sanitised research findings**. Actual people, private evidence, relationship state, consent state, commercial state, protected decisions, and sensitive operational truth remain in their authorised source systems or private repositories.
+
+For example, test `PERSON -> CURRENT_SOLE_TRADER_STATE -> INTENDED_FUTURE_COMPANY_STATE` using a synthetic fixture. Do not copy a real person's private evidence into this public repository simply to prove that the temporal model works.
+
+### Cross-visibility release gate
+
+Material derived from a private source may cross into this repository only when all of the following are true:
+
+- the source owner and provenance are known;
+- the proposed public output has been minimised and sanitised;
+- no prohibited or sensitive information remains;
+- release does not transfer or imply source authority, consent, product approval, legal approval, or production authority;
+- the applicable source-owned release policy is satisfied; and
+- **authorised human review has approved the public release where required by the source or where disclosure risk is not clearly negligible.**
+
+This gate is a repository safety invariant. Agents MUST fail closed rather than improvise around it.
+
 ## Repository authority boundary
 
 This repository is the **independently usable public research surface** for EduLinked Metadata Sovereignty. It does not own private product authority and must not be treated as an implementation mirror, integration client, operational gateway, or automatic projection of private product state.
