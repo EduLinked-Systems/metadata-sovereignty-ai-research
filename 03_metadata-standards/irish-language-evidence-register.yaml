@@ -1,0 +1,20 @@
+schema_version: '1.0'
+object_type: evidence_register
+id: IRISH-LANGUAGE-MEANING-EVIDENCE-REGISTER
+status: active
+source_owner: EduLinked-Systems/metadata-sovereignty-ai-research
+bound_operational_object: 03_metadata-standards/irish-language-meaning-preservation.operational-object.yaml
+principle: preserve source-language meaning and provenance
+research_front:
+  - {id: irish-blimp-2026, evidence_type: empirical_benchmark, evidence_strength: high}
+  - {id: qomhra-2026, evidence_type: empirical_evaluation, evidence_strength: high}
+  - {id: gaeilge-bhriste-2025, evidence_type: empirical_evaluation, evidence_strength: high}
+  - {id: synthetic-fluency-2025, evidence_type: empirical_study, evidence_strength: medium_high}
+  - {id: irish-ner-2025, evidence_type: benchmark, evidence_strength: high}
+  - {id: term-planning-irish-2025, evidence_type: specialist_scholarship, evidence_strength: high}
+  - {id: gaeilge-ai-teaching, evidence_type: source_language_scholarship, source_language: ga}
+  - {id: ieee-2890-2025, evidence_type: provenance_standard, boundary: precedent_only}
+  - {id: care-local-contexts, evidence_type: governance_infrastructure, boundary: preserve_distinct_governance_contexts}
+risk_classes: [dialect_flattening, concept_flattening, synthetic_legitimacy, entity_distortion, provenance_severance, epistemic_pivoting, authority_loss]
+canonical_review_rule: fluent human Gaeilge authority required for canonical or high-risk semantic mappings
+supersession_rule: retain defective and corrected claims with explicit supersession binding
