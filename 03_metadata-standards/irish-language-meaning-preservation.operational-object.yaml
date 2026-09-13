@@ -1,0 +1,76 @@
+id: IRISH-LANGUAGE-MEANING-PRESERVATION
+version: 0.1.0
+status: active-research-front
+kind: operational-object
+source_authority:
+  repository: EduLinked-Systems/metadata-sovereignty-ai-research
+  rule: source-language-first
+principle: "Translate representations; do not translate away the source ontology."
+canonical_model:
+  sequence:
+    - source_language_expression
+    - source_language_concept_identity
+    - provenance_and_authority
+    - dialect_and_register
+    - governed_multilingual_mappings
+    - accessible_projections
+  prohibition: "English MUST NOT silently become the canonical epistemic pivot."
+required_metadata:
+  - source_language
+  - source_expression
+  - concept_identity
+  - dialect_or_variety
+  - register
+  - source_creator_or_community
+  - source_uri_or_identifier
+  - authority_basis
+  - transformation_history
+  - translator_or_model
+  - mapping_confidence
+  - semantic_loss_warning
+  - consent_or_reuse_constraints
+  - supersession_state
+semantic_erasure_risks:
+  dialect_flattening: "Distinct Irish varieties are normalised into one representation."
+  concept_flattening: "A situated Irish concept is replaced by its nearest English lexical equivalent."
+  synthetic_legitimacy: "Generated Irish appears linguistically plausible while introducing unsupported forms or meaning."
+  entity_distortion: "Names, places, institutions or culturally situated entities are damaged during extraction or mapping."
+  provenance_severance: "A claim survives transformation while its source, language, speaker/community or authority is lost."
+  epistemic_pivoting: "A translation becomes canonical and the source language becomes a display label."
+  authority_loss: "Model-generated interpretation is treated as equivalent to source/community authority."
+validation:
+  source_language_preserved: required
+  provenance_chain_preserved: required
+  semantic_loss_assessed: required
+  model_self_certification_sufficient: false
+  source_language_human_review:
+    required_for: [high_risk_claims, canonical_concepts, disputed_mappings]
+provenance_policy:
+  corrected_claims: "Retain prior evidence and mark SUPERSEDED with successor binding; do not silently overwrite provenance."
+  external_frameworks: "Reuse machine-operable provenance patterns where legitimate; do not treat Indigenous governance frameworks and Irish historical/community contexts as interchangeable."
+easy_read_follow_up:
+  symbol_supported: true
+  priority_objects:
+    - title: "AI can speak Irish and still get Irish wrong"
+      purpose: distinguish fluent appearance from preserved meaning
+    - title: "Where did this knowledge come from?"
+      purpose: show source/community -> Gaeilge source -> concept -> mappings -> outputs with provenance at every transformation
+    - title: "Translation should not erase the original"
+      purpose: explain why Gaeilge, dialect and source remain attached to accessible and multilingual projections
+research_watch:
+  active: true
+  priorities:
+    - Gaeilge-first scholarship
+    - Irish NLP and LLM evaluation
+    - multilingual ontology and knowledge representation
+    - anti-colonial provenance
+    - data sovereignty and machine-operable cultural authority
+    - semantic erasure and translation loss
+machine_readable_continuation:
+  workflow: "DISCOVER -> REUSE -> BIND -> CONFIGURE -> COMPOSE -> EXTEND -> CREATE ONLY IF REQUIRED"
+  next_actions:
+    - bind empirical Irish-language benchmarks as evidence objects
+    - bind source-language scholarship without replacing Gaeilge titles or terminology
+    - map applicable provenance standards and protocols with explicit claim ceilings
+    - produce symbol-supported Easy Read projections
+    - test existing ontology and AI objects for epistemic-pivot and provenance-severance risk
