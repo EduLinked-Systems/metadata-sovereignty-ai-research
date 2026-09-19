@@ -1,5 +1,5 @@
 id: IRISH-LANGUAGE-MEANING-PRESERVATION
-version: 0.1.0
+version: 0.2.0
 status: active-research-front
 kind: operational-object
 source_authority:
@@ -48,8 +48,34 @@ validation:
 provenance_policy:
   corrected_claims: "Retain prior evidence and mark SUPERSEDED with successor binding; do not silently overwrite provenance."
   external_frameworks: "Reuse machine-operable provenance patterns where legitimate; do not treat Indigenous governance frameworks and Irish historical/community contexts as interchangeable."
+accessibility_authority_binding:
+  rule: "Accessible projection is a governed derivative of the source-language meaning, not a new source ontology or proof of accessibility."
+  source_authorities:
+    - repository: EduLinked-Pty-Ltd/core-machine-objects
+      path: objects/education/easy-read-adaptive-instructional-composition-v0.1.json
+      role: EASY_READ_SEMANTIC_AND_COMPOSITION_AUTHORITY
+    - repository: EduLinked-Pty-Ltd/core-machine-objects
+      path: objects/accessibility-capability-layer/contracts/accessible-document-lifecycle-v1.json
+      role: SOURCE_PRESERVING_REQUIREMENT_TRANSFORMATION_VERIFICATION_EXPORT_AND_OUTCOME_BOUNDARY
+    - repository: EduLinked-Systems/edulinked-accessibility-system
+      path: adapters/easy-read/entrypoints.yaml
+      role: CURRENT_EASY_READ_IMPLEMENTATION_AND_NAVIGATION_PROJECTION
+    - repository: EduLinked-Pty-Ltd/accessible-RTO
+      path: templates/inclusive-learning-production-standard.md
+      version: 1.2.0
+      role: INCLUSIVE_PRODUCTION_AND_LANGUAGE_LOCALISATION_REQUIREMENTS
+  explicit_non_use:
+    - repository: EduLinked-Systems/easy-read
+      state: NO_OP_FOR_PRODUCTION_CONSUMPTION
+      reason: "Source-owned issue #1 remains an open authority-proof gate; successor boundary != proven production implementation."
+  requirement_rule: "Do not infer Easy Read, symbol, AAC, signed-language, translation/localisation or other modality preference from availability alone; bind an attributable person/cohort/purpose requirement or retain UNKNOWN."
+  language_rule: "Translation and accessibility transformation must preserve the Gaeilge source, source-language concept identity, dialect/register metadata and transformation lineage."
+  verification_rule: "Machine generation or checking cannot self-certify semantic preservation, accessibility conformance, cultural localisation or participant comprehension."
 easy_read_follow_up:
-  symbol_supported: true
+  state: planned_not_produced
+  symbol_supported_candidate: true
+  modality_selection_requires_attributable_need: true
+  source_language_must_remain_attached: true
   priority_objects:
     - title: "AI can speak Irish and still get Irish wrong"
       purpose: distinguish fluent appearance from preserved meaning
@@ -57,6 +83,19 @@ easy_read_follow_up:
       purpose: show source/community -> Gaeilge source -> concept -> mappings -> outputs with provenance at every transformation
     - title: "Translation should not erase the original"
       purpose: explain why Gaeilge, dialect and source remain attached to accessible and multilingual projections
+  production_route: "Use the existing Core accessibility lifecycle and Accessibility System entrypoints when a bounded real consumer/access requirement exists; do not create repository-local Easy Read/AAC production architecture."
+claim_boundaries:
+  - TRANSLATION_REQUESTED != TRANSLATION_COMPLETE
+  - MACHINE_DRAFT_ONLY != LINGUISTICALLY_VERIFIED
+  - TRANSLATED_TEXT != CULTURALLY_LOCALISED
+  - SOURCE_LANGUAGE_PRESERVED != SEMANTIC_PRESERVATION_VERIFIED
+  - PLAIN_LANGUAGE != EASY_READ
+  - SYMBOLS_PRESENT != AAC
+  - ACCESSIBILITY_OPTION_AVAILABLE != PARTICIPANT_PREFERENCE
+  - AI_GENERATED != ACCESSIBLE
+  - AUTOMATED_CHECK != ACCESSIBILITY_CONFORMANCE
+  - MATERIALISATION != PARTICIPANT_COMPREHENSION
+  - ACCESSIBILITY_VERIFICATION != PARTICIPATION_OUTCOME
 research_watch:
   active: true
   priorities:
@@ -68,9 +107,13 @@ research_watch:
     - semantic erasure and translation loss
 machine_readable_continuation:
   workflow: "DISCOVER -> REUSE -> BIND -> CONFIGURE -> COMPOSE -> EXTEND -> CREATE ONLY IF REQUIRED"
+  completed_in_this_revision:
+    - bound accessible projections to current Core, Accessibility System and AccessFlow authorities
+    - removed any implication that symbol support is an already-selected participant modality
+    - separated machine generation, semantic preservation, accessibility verification and participant comprehension claims
   next_actions:
     - bind empirical Irish-language benchmarks as evidence objects
     - bind source-language scholarship without replacing Gaeilge titles or terminology
     - map applicable provenance standards and protocols with explicit claim ceilings
-    - produce symbol-supported Easy Read projections
+    - when a real bounded consumer/access requirement exists, produce the priority accessible projection through the existing accessibility lifecycle and retain human/source-language review gates
     - test existing ontology and AI objects for epistemic-pivot and provenance-severance risk
