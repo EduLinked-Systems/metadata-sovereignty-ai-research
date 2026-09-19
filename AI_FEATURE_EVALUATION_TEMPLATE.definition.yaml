@@ -5,30 +5,81 @@ source_system: github
 source_owner: EduLinked-Systems/metadata-sovereignty-ai-research
 source_pointer: AI_FEATURE_EVALUATION_TEMPLATE.md
 template_family: AI_CAPABILITY_EVALUATION
-purpose: Evaluate AI features for usefulness, accessibility, transparency, metadata compatibility, ethical risk and governance suitability.
-version_or_revision: 1.0.0
+purpose: Evaluate AI features for usefulness, accessibility, transparency, metadata compatibility, ethical risk and governance suitability without creating parallel accessibility or learning authority.
+version_or_revision: 1.1.0
 authority_boundary: METADATA_SOVEREIGNTY_AI_CAPABILITY_REVIEW_TEMPLATE
 lifecycle_state: CURRENT
 maturity: SUBSTANTIVE_REUSABLE_TEMPLATE
 created_at: null
-last_validated_at: 2026-09-08
-validation_evidence: [AI_FEATURE_EVALUATION_TEMPLATE.md]
+last_validated_at: 2026-09-20
+validation_evidence:
+  - AI_FEATURE_EVALUATION_TEMPLATE.md
+  - 04_accessibility-ai-features/feature-requirements.md
 applicable_domains: [AI_tool_evaluation, accessibility, metadata_governance, ethical_AI_review]
-intended_consumers: [researchers, students, governance reviewers, AI capability selection workflows]
-required_inputs: [feature_name, description, intended_purpose, required_inputs, metadata_requirements]
-produced_outputs: [accessibility_impact, transparency_requirements, human_oversight, risks_and_limitations, ethical_considerations, suitability_assessment, recommendation]
+intended_consumers: [researchers, students, governance_reviewers, AI_capability_selection_workflows]
+required_inputs:
+  - feature_name
+  - description
+  - intended_purpose
+  - required_inputs
+  - metadata_requirements
+  - source_artefact_and_revision
+  - attributable_access_requirement_or_unknown_state
+produced_outputs:
+  - accessibility_requirement_and_impact
+  - transparency_requirements
+  - human_oversight
+  - risks_and_limitations
+  - ethical_considerations
+  - suitability_assessment
+  - recommendation
 review_gate_refs: [ACCESSIBILITY_REVIEW, EVIDENCE_REVIEW, OTHER_PROTECTED_REVIEW]
-accessibility_requirements: [explicit_accessibility_impact_review, accessible_output_consideration]
+accessibility_requirements:
+  - explicit_access_requirement_or_unknown_state
+  - source_preserving_accessibility_transformation
+  - automated_check_separated_from_human_or_AT_verification
+  - participant_or_cohort_validation_where_comprehension_or_real_use_is_material
+  - accessible_output_consideration
+reuses:
+  - repository: EduLinked-Pty-Ltd/core-machine-objects
+    path: objects/education/easy-read-adaptive-instructional-composition-v0.1.json
+    role: EASY_READ_SEMANTIC_AND_COMPOSITION_AUTHORITY
+  - repository: EduLinked-Pty-Ltd/core-machine-objects
+    path: objects/accessibility-capability-layer/contracts/accessible-document-lifecycle-v1.json
+    role: SOURCE_PRESERVING_ACCESSIBILITY_REQUIREMENT_TRANSFORMATION_VERIFICATION_AND_OUTCOME_BOUNDARY
+  - repository: EduLinked-Systems/edulinked-accessibility-system
+    path: adapters/easy-read/entrypoints.yaml
+    role: CURRENT_EASY_READ_IMPLEMENTATION_AND_NAVIGATION_PROJECTION
+  - repository: EduLinked-Pty-Ltd/accessible-RTO
+    path: templates/inclusive-learning-production-standard.md
+    version: 1.2.0
+    role: INCLUSIVE_LEARNING_PRODUCTION_REQUIREMENTS
+explicit_non_use:
+  - repository: EduLinked-Systems/easy-read
+    state: NO_OP_FOR_PRODUCTION_CONSUMPTION
+    reason: Source-owned issue 1 remains an open authority-proof gate; successor boundary is established but proven production implementation is not.
 source_provenance:
   authority: source-owning repository
   evaluation_must_preserve_source_evidence: true
 supersedes: []
 superseded_by: null
-machine_retrieval_terms: [AI feature review, AI capability evaluation, ethical AI, accessibility impact, metadata requirements, human oversight]
+machine_retrieval_terms: [AI feature review, AI capability evaluation, ethical AI, accessibility impact, metadata requirements, human oversight, accessibility authority, accessible document lifecycle]
 example_or_fixture_refs: []
 known_limitations:
   - Suitability rating is an evaluation aid, not execution or procurement authority.
-  - Template completion does not prove safety, accessibility or legal compliance.
+  - Template completion does not prove safety, accessibility, comprehension, legal compliance or publication readiness.
+  - AI-generated or machine-checked output must not be promoted to accessibility conformance.
+  - An available accessibility mode does not establish participant preference or an attributable access requirement.
+claim_boundaries:
+  - AI_GENERATED != ACCESSIBLE
+  - PLAIN_LANGUAGE != EASY_READ
+  - AUTOMATED_CHECK != ACCESSIBILITY_CONFORMANCE
+  - MATERIALISATION != PARTICIPANT_COMPREHENSION
+  - ACCESSIBILITY_OPTION_AVAILABLE != PARTICIPANT_PREFERENCE
+  - ACCESSIBILITY_VERIFICATION != PARTICIPATION_OUTCOME
+  - RESEARCH_RECOMMENDATION != PRODUCTION_OR_PUBLICATION_AUTHORITY
 instantiation_preconditions:
   - AI feature or capability being evaluated is identifiable
   - evidence for claims can be referenced
+  - source artefact and revision can be identified when a transformation is proposed
+  - access requirement is attributable or explicitly UNKNOWN rather than invented
