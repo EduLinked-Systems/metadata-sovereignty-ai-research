@@ -36,9 +36,12 @@ jobs:
         run: echo "result=success" >> "$GITHUB_OUTPUT"
 
   central-compatibility:
-    uses: EduLinked-Systems/.github/.github/workflows/reusable-orchestration-compatibility.yml@de1b94c52d36f3d7c6bf91ce7ddbd202c5a813ea
+    uses: EduLinked-Systems/.github/.github/workflows/reusable-orchestration-compatibility.yml@f2951c2a8156732bfeba49d4792556b172ea2cd6
+    secrets:
+      ENTERPRISE_APP_PRIVATE_KEY: ${{ secrets.ENTERPRISE_APP_PRIVATE_KEY }}
     with:
       service_input_path: qa/eso-04/research-public.service-input.json
+      orchestration_ref: f2951c2a8156732bfeba49d4792556b172ea2cd6
 
   compare-evidence:
     if: always()
@@ -68,6 +71,7 @@ jobs:
               "repository": os.environ["GITHUB_REPOSITORY"],
               "commit_sha": os.environ["GITHUB_SHA"],
               "workflow": os.environ["GITHUB_WORKFLOW"],
+              "orchestration_reference": "f2951c2a8156732bfeba49d4792556b172ea2cd6",
               "local_validation": local_result,
               "central_compatibility": central_result,
               "central_success_claim_allowed": central_success,
