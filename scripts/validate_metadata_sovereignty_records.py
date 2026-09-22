@@ -9,40 +9,18 @@ import sys
 from pathlib import Path
 from typing import Any
 
-REQUIRED_TOP_LEVEL = {
-    "contract_version",
-    "record_id",
-    "record_type",
-    "title",
-    "authorship",
-    "provenance",
-    "consent",
-    "accessibility",
-    "ai_permissions",
-    "human_review",
-    "publication",
-    "integrity",
-}
+SCHEMA_PATH = Path("schemas/metadata-sovereignty-research-record.schema.json")
 
-RECORD_TYPES = {
-    "research_question",
-    "source",
-    "evidence",
-    "finding",
-    "recommendation",
-    "dataset",
-    "publication",
-}
+def load_contract_population() -> tuple[set[str], set[str], set[str]]:
+    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    properties = schema["properties"]
+    return (
+        set(schema["required"]),
+        set(properties["record_type"]["enum"]),
+        set(properties["ai_permissions"]["required"]),
+    )
 
-AI_PERMISSION_FIELDS = {
-    "summarise",
-    "translate",
-    "accessibility_transform",
-    "derive",
-    "training",
-    "commercial_use",
-    "citation_required",
-}
+REQUIRED_TOP_LEVEL, RECORD_TYPES, AI_PERMISSION_FIELDS = load_contract_population()
 
 
 def require_fields(value: dict[str, Any], fields: set[str], location: str, errors: list[str]) -> None:
