@@ -2,19 +2,21 @@
   "receipt_id": "EDULINKED-ORCHESTRATION-EXCEPTION-2026-09-09-METADATA-SOVEREIGNTY-RESEARCH-BINDING",
   "receipt_type": "repository_automation_binding",
   "repository": "EduLinked-Systems/metadata-sovereignty-ai-research",
+  "refreshed_date": "2026-09-23",
   "exception": {
     "classification": "eduos-binding",
-    "status": "patchable",
-    "action": "open_draft_pr",
+    "status": "resolved_on_source_main",
+    "action": "no_new_binding_required",
     "source": "EduLinked-Systems/.github/reports/orchestration/latest.json",
     "source_blob_sha": "94e0b697f038b31ab346e716219fd620a060c003",
     "queue_summary": {
       "repositories_inspected": 74,
       "exceptions": 92
     },
-    "disposition": "PROPOSED_BINDING_PENDING_HUMAN_MERGE"
+    "disposition": "BINDING_ADOPTED_ON_SOURCE_MAIN_RECEIPT_RECONCILED"
   },
   "source_authority": {
+    "current_main_sha": "bfbbcad9947ea5b2c9125c498393b8e9ad4644b6",
     "readme": {
       "path": "README.md",
       "blob_sha": "f07508db711b8e67ae313255edcac9339fc03970",
@@ -86,7 +88,9 @@
       "governance_promotion"
     ],
     "release_eligible": false,
-    "public_release_authorised": false
+    "public_release_authorised": false,
+    "binding_merge_observed_on_source_main": true,
+    "merge_performed_by_this_reconciliation": false
   },
   "validation": {
     "binding_contract": {
@@ -127,14 +131,27 @@
       "jobs_created": 0,
       "success_claim_allowed": false,
       "treatment": "NOT_USED_AS_SUCCESS_EVIDENCE",
-      "note": "The temporary trigger expansion was reverted. The canary file is unchanged from source blob 36c2afff55faf9bb1b977675c5a046f6a6c9224f. The separate central workflow-failure exception remains unresolved and outside this binding repair."
+      "note": "The temporary trigger expansion was reverted. The separate central workflow-failure exception remains unresolved and outside this binding receipt reconciliation."
+    },
+    "current_source_readback": {
+      "status": "VERIFIED",
+      "source_main_sha": "bfbbcad9947ea5b2c9125c498393b8e9ad4644b6",
+      "binding_path": ".github/edulinked-automation.yml",
+      "binding_blob_sha": "1cae086382e6a8845764bc50cacabc828304558c"
     }
   },
   "remaining_independent_exception": {
     "classification": "workflow-failure",
     "status": "requires_classification",
-    "note": "The central receipt separately reports recent workflow failures. This binding repair does not classify or resolve them."
+    "note": "The central receipt separately reports recent workflow failures. This reconciliation does not classify or resolve them."
   },
-  "remaining_blocker": "Human review and merge are required before the binding exists on main and the canonical queue can be recomputed.",
-  "next_continuation": "After human merge, rerun the central proactive orchestrator and verify only this eduos-binding finding is removed."
+  "reconciliation": {
+    "observed_at": "2026-09-23",
+    "previous_state": "PROPOSED_BINDING_PENDING_HUMAN_MERGE",
+    "current_state": "BINDING_ADOPTED_ON_SOURCE_MAIN_RECEIPT_RECONCILED",
+    "reason": "The exact governed repository automation binding exists on current source main.",
+    "no_duplicate_architecture": true
+  },
+  "remaining_blocker": "NONE_FOR_EDUOS_BINDING_ADOPTION; independent workflow-failure classification remains separate.",
+  "next_continuation": "On the next central orchestration pass, expect this eduos-binding finding to clear. If it remains, classify the aggregate orchestration projection as stale rather than creating another repository-local binding."
 }
