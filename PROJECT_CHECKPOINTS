@@ -41,8 +41,9 @@ Supervisor: ____________________  Date: ______
 
 **Supervisor checks**
 - Final report meets Project Expectations (`PROJECT_EXPECTATIONS_PUBLIC.md`)  
-- All public deliverables reference ethical boundaries and sanitisation requirements for public examples.  
-- Supervisor completes `PUBLICATION_CHECKLIST.md` for any files to be published.
+- All public deliverables follow [DATA_CLASSIFICATION.md](DATA_CLASSIFICATION.md) and [SANITISATION_GUIDE.md](SANITISATION_GUIDE.md).  
+- Supervisor completes [PUBLICATION_CHECKLIST.md](PUBLICATION_CHECKLIST.md) for the exact files and versions proposed for release.  
+- Approved public-release decisions are recorded without sensitive detail in [PUBLICATION_LOG.md](PUBLICATION_LOG.md).
 
 **Final sign-off**  
 Supervisor: ____________________  Date: ______
