@@ -13,6 +13,8 @@ New contributors should begin with:
 • STUDENT_RESEARCH_GUIDE.md  
 • RESEARCH_QUESTIONS.md  
 • GLOSSARY.md  
+• DATA_CLASSIFICATION.md  
+• SANITISATION_GUIDE.md  
 
 These documents explain the project purpose, terminology, and research tasks.
 
@@ -123,7 +125,11 @@ Students should use these templates when conducting research.
 
 • METADATA_TEMPLATE.md  
 • AI_FEATURE_EVALUATION_TEMPLATE.md  
-• CITATION.md
+• CITATION.md  
+• DATA_CLASSIFICATION.md  
+• SANITISATION_GUIDE.md  
+• PUBLICATION_CHECKLIST.md  
+• PUBLICATION_LOG.md
 
 ---
 
@@ -144,3 +150,4 @@ Key governance and guidance documents:
 3. Add findings to the relevant folder.
 4. Include citations and sources.
 5. Update documents clearly with authorship and dates.
+6. Complete the publication checklist and record the human decision before adding public examples or derived material.
