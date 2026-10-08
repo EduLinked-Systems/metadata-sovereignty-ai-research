@@ -19,6 +19,9 @@ New contributors should begin with these canonical orientation files:
 - [GLOSSARY.md](GLOSSARY.md) - shared terminology for metadata sovereignty, AI transparency, accessibility, and governance
 - [METADATA_TEMPLATE.md](METADATA_TEMPLATE.md) - human-readable record documentation guidance
 - [Machine-Operable Research System](docs/MACHINE_OPERABLE_RESEARCH_SYSTEM.md) - versioned contract, validator, authority boundaries, and implementation lifecycle
+- [DATA_CLASSIFICATION.md](DATA_CLASSIFICATION.md) - public, internal, and sensitive/restricted handling boundary
+- [SANITISATION_GUIDE.md](SANITISATION_GUIDE.md) - required preparation process for public research material
+- [PUBLICATION_CHECKLIST.md](PUBLICATION_CHECKLIST.md) and [PUBLICATION_LOG.md](PUBLICATION_LOG.md) - human release decision and privacy-safe approval record
 
 Use these files as the source of truth before adding or revising research content.
 
@@ -192,5 +195,6 @@ When adding research outputs, contributors should:
 - cite credible sources rather than relying only on promotional material
 - make accessibility, consent, human review, publication authority, and AI permissions explicit
 - treat missing permission as no permission
+- complete the sanitisation and publication gate before adding examples, datasets, case material, media, or derived outputs to the public repository
 
 Accessibility research resources are located in [`02_background_research/accessibility/`](02_background_research/accessibility/).
