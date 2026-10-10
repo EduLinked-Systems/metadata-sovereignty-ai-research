@@ -22,10 +22,15 @@ The release is aligned with Strategic Self-Advocacy (SSA) principles:
 | --- | --- |
 | `glossary.md` | Human-readable definitions for minority erasure and related risks. |
 | `taxonomy.json` | Machine-readable concept map and risk labels. |
+| `vocab/controlled-vocabulary.json` | Preferred terms and contextual alternatives for every taxonomy risk identifier. |
+| `json-schema/minority-erasure-record.schema.json` | Public-draft structural contract for governed minority-erasure records. |
 | `ssa-erasure-prevention-principles.md` | SSA-aligned principles for preventing erasure. |
 | `ai-boundaries-minority-erasure.md` | Boundaries for AI systems handling minority-authored or lived-experience material. |
-| `examples/minority-erasure.synthetic.valid.json` | Synthetic governed record showing safe documentation of erasure risk. |
+| `examples/` | Synthetic governed records for structural and safety validation. |
+| `review-checklists/` | Human erasure-risk and publication-safety review guidance. |
 | `release-notes/v0.1.0.md` | Release notes, scope, safeguards, and review status. |
+
+The repository validator checks that taxonomy concept identifiers, schema risk labels, and controlled-vocabulary preferred-term identifiers remain identical. Passing that check proves structural alignment only; it does not approve a term, definition, record, or publication.
 
 ## Safe Use
 
