@@ -31,8 +31,10 @@ jobs:
       - name: Compile validator
         run: python -m py_compile scripts/validate_minority_erasure_records.py
 
-      - name: Validate minority erasure records
+      - name: Validate minority erasure contracts and records
         run: |
           python scripts/validate_minority_erasure_records.py \
             --schema minority-erasure/json-schema/minority-erasure-record.schema.json \
+            --taxonomy minority-erasure/taxonomy.json \
+            --vocabulary minority-erasure/vocab/controlled-vocabulary.json \
             minority-erasure/examples/*.json
