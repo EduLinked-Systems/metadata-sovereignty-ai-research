@@ -29,6 +29,16 @@
       "use_for": ["access needs omitted", "communication supports removed", "accessible format loss"]
     },
     {
+      "id": "metadata_erasure",
+      "label": "metadata erasure",
+      "use_for": ["authorship metadata omitted", "provenance omitted", "permissions omitted"]
+    },
+    {
+      "id": "translation_erasure",
+      "label": "translation erasure",
+      "use_for": ["authority changed in translation", "meaning changed in translation", "AI-mediated representation"]
+    },
+    {
       "id": "institutional_reframing",
       "label": "institutional reframing",
       "use_for": ["organisational sanitisation", "protective rewriting", "authority shift"]

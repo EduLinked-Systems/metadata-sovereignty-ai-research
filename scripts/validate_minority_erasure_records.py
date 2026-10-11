@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate minority-erasure JSON records against the public draft schema.
+"""Validate minority-erasure records and terminology contracts.
 
 This validator intentionally uses only the Python standard library so GitHub
 Actions can run it without dependency installation.
@@ -141,27 +141,100 @@ def validate_record(record: Any, schema: dict[str, Any], source: Path) -> list[s
     return errors
 
 
+def extract_unique_ids(value: Any, location: str, errors: list[str]) -> set[str]:
+    if not isinstance(value, list):
+        errors.append(f"{location}: expected an array")
+        return set()
+
+    ids: list[str] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, dict) or not isinstance(item.get("id"), str) or not item["id"]:
+            errors.append(f"{location}[{index}]: expected an object with a non-empty string id")
+            continue
+        ids.append(item["id"])
+
+    duplicates = sorted({item_id for item_id in ids if ids.count(item_id) > 1})
+    if duplicates:
+        errors.append(f"{location}: duplicate ids: {', '.join(duplicates)}")
+    return set(ids)
+
+
+def validate_terminology_alignment(
+    schema: dict[str, Any], taxonomy: Any, vocabulary: Any, taxonomy_path: Path, vocabulary_path: Path
+) -> list[str]:
+    errors: list[str] = []
+    if not isinstance(taxonomy, dict):
+        return [f"{taxonomy_path}: taxonomy must be a JSON object"]
+    if not isinstance(vocabulary, dict):
+        return [f"{vocabulary_path}: vocabulary must be a JSON object"]
+
+    taxonomy_ids = extract_unique_ids(taxonomy.get("concepts"), f"{taxonomy_path}.concepts", errors)
+    vocabulary_ids = extract_unique_ids(vocabulary.get("preferred_terms"), f"{vocabulary_path}.preferred_terms", errors)
+
+    try:
+        schema_ids_value = schema["properties"]["erasure_risk"]["properties"]["risk_labels"]["items"]["enum"]
+    except (KeyError, TypeError):
+        errors.append("schema: erasure_risk.risk_labels.items.enum is missing")
+        schema_ids: set[str] = set()
+    else:
+        if not isinstance(schema_ids_value, list) or not all(isinstance(item, str) for item in schema_ids_value):
+            errors.append("schema: erasure_risk.risk_labels.items.enum must be an array of strings")
+            schema_ids = set()
+        else:
+            schema_ids = set(schema_ids_value)
+            if len(schema_ids) != len(schema_ids_value):
+                errors.append("schema: erasure_risk.risk_labels.items.enum contains duplicate values")
+
+    sources = {
+        "taxonomy": taxonomy_ids,
+        "controlled vocabulary": vocabulary_ids,
+        "record schema": schema_ids,
+    }
+    all_ids = set().union(*sources.values())
+    for source_name, source_ids in sources.items():
+        missing = sorted(all_ids - source_ids)
+        extra = sorted(source_ids - set.intersection(*(ids for name, ids in sources.items() if name != source_name)))
+        if missing:
+            errors.append(f"{source_name}: missing risk ids present elsewhere: {', '.join(missing)}")
+        if extra:
+            errors.append(f"{source_name}: risk ids absent from another terminology source: {', '.join(extra)}")
+
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--schema", required=True, type=Path)
+    parser.add_argument("--taxonomy", required=True, type=Path)
+    parser.add_argument("--vocabulary", required=True, type=Path)
     parser.add_argument("records", nargs="+", type=Path)
     args = parser.parse_args()
 
     all_errors: list[str] = []
-    try:
-        schema = load_json(args.schema)
-    except ValueError as exc:
-        print(exc, file=sys.stderr)
-        return 1
+    documents: dict[str, Any] = {}
+    for name, path in (("schema", args.schema), ("taxonomy", args.taxonomy), ("vocabulary", args.vocabulary)):
+        try:
+            documents[name] = load_json(path)
+        except (OSError, ValueError) as exc:
+            all_errors.append(str(exc))
 
-    all_errors.extend(validate_schema_document(schema, args.schema))
+    schema = documents.get("schema")
+    if schema is not None:
+        all_errors.extend(validate_schema_document(schema, args.schema))
+    if isinstance(schema, dict) and "taxonomy" in documents and "vocabulary" in documents:
+        all_errors.extend(
+            validate_terminology_alignment(
+                schema, documents["taxonomy"], documents["vocabulary"], args.taxonomy, args.vocabulary
+            )
+        )
+
     if not isinstance(schema, dict):
         all_errors.append(f"{args.schema}: cannot validate records without an object schema")
     else:
         for record_path in args.records:
             try:
                 record = load_json(record_path)
-            except ValueError as exc:
+            except (OSError, ValueError) as exc:
                 all_errors.append(str(exc))
                 continue
             all_errors.extend(validate_record(record, schema, record_path))
@@ -172,6 +245,7 @@ def main() -> int:
         return 1
 
     print(f"Validated schema: {args.schema}")
+    print(f"Validated terminology alignment: {args.taxonomy}, {args.vocabulary}")
     for record_path in args.records:
         print(f"Validated record: {record_path}")
     return 0
