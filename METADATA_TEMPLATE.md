@@ -10,7 +10,9 @@ The aim is to ensure records remain:
 • ethically governed  
 • accessible to both humans and AI systems.
 
-Students should use this template when documenting research artefacts, example records, or case studies.
+Students should use this template when documenting research artefacts, example records, or case studies. The examples below are illustrative, not evidence of consent or permission. Follow [data classification and public sharing rules](DATA_CLASSIFICATION.md); do not place real sensitive records or identifying information in this public repository.
+
+This human-readable guide does not replace the [version 0.1 research-record contract](docs/MACHINE_OPERABLE_RESEARCH_SYSTEM.md). When an artefact enters a governed workflow, use that contract and its schema for the required machine-readable fields and values; do not assume the examples below map directly to its controlled values.
 
 ---
 
@@ -82,7 +84,7 @@ Consent limited
 Consent withdrawn  
 Consent unknown
 
-Include notes where necessary.
+Record the permitted purposes and limits, and reference the relevant consent evidence where appropriate without exposing protected information. A status label alone does not establish valid consent or authorise every use. Where consent or its scope is unknown, do not infer permission.
 
 ---
 
@@ -158,9 +160,13 @@ Allowed for summarisation
 Allowed for accessibility formatting  
 Not permitted for AI processing
 
+Record permissions separately for each proposed use and any applicable limits or source references. Consent for one purpose does not automatically permit another, including model training or commercial use. Missing permission is not permission. The structured contract requires explicit AI permission fields; see the [machine-operable guidance](docs/MACHINE_OPERABLE_RESEARCH_SYSTEM.md) and [AI boundaries](AI_BOUNDARIES_PUBLIC.md). A declaration in this template does not itself grant authority.
+
 ---
 
 # Metadata Summary Example
+
+The following values are illustrative only; they are not a record of an actual person's consent or an approval for reuse.
 
 Record Title  
 Advocacy Case Notes – Housing Access
